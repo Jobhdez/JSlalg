@@ -1,5 +1,5 @@
 # classesJS
-basic vector and matrix classes
+wrote some basic vector and matrix classes to write comfortably in JavaScript.
 
 ## Progress
 to start the project I have implemented an basic and incomplete vector class.
