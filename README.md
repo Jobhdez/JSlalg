@@ -1,4 +1,7 @@
 # classesJS
+This was a small exercise to learn JS
+
+# About
 I wrote some basic vector and matrix classes so I can learn to write comfortably in JavaScript.
 
 ## Progress
