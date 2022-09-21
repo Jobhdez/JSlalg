@@ -117,7 +117,7 @@ class Matrix {
         @param initialized matrix
         @returns: matrix
         */
-	let mtx = this.matrix.map((n, i) => {return n.map((k,j) => {return k + other.matrix[i][j]})});
+	let mtx = this.matrix.map((n, i) => {return n.map((k,j) => {return k - other.matrix[i][j]})});
 
 	return new Matrix(mtx);
     }
