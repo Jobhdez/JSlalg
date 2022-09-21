@@ -4,7 +4,7 @@ This was a small exercise to learn JS
 # About
 I wrote some basic vector and matrix classes so I can learn to write comfortably in JavaScript.
 
-# Installation
+## Installation
 Clone this repo.
 
 Install Node.
@@ -18,7 +18,7 @@ You can play with it by:
 ```
 v = require('./linearalgebra')
 
-v1 = v.Vector([3,4,5])
+v1 = new v.Vector([3,4,5])
 
 v1.vector // will output [3,4,5]
 
@@ -29,3 +29,8 @@ v2 = v.Vector[1,1,1]
 v1.sub(v2)
 ```
 
+## tests
+to run the tests do:
+```
+npm run test
+```
