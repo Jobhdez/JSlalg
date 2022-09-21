@@ -1,0 +1,23 @@
+{
+  "name": "classesjs",
+  "version": "1.0.0",
+  "description": "basic vector and matrix classes",
+  "main": "linearalgebra.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jobhdez/classesJS.git"
+  },
+  "author": "Job Hernandez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jobhdez/classesJS/issues"
+  },
+  "homepage": "https://github.com/Jobhdez/classesJS#readme",
+  "dependencies": {
+    "chai": "^4.3.6",
+    "mocha": "^10.0.0"
+  }
+}

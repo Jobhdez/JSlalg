@@ -27,6 +27,9 @@ class Vector {
 	    }
 	    return new Vector(v)
 	}
+	else {
+	    throw 'Expected a Vector';
+	}
     }
     sub(other) {
 	/*
@@ -43,6 +46,9 @@ class Vector {
 	    }
 	    return new Vector(v);
 	}
+	else {
+	    throw 'Expected a Vector';
+	}
     }
     mulByScalar(scalar) {
 	/*
@@ -52,7 +58,7 @@ class Vector {
         @param scalar: scalar
         @returns: a vector
         */
-	if (scalar instanceof Integer) {
+	if (Number.isInteger(scalar)) {
 	    let v = [];
 	    for (const i in this.vector) {
 
@@ -62,6 +68,9 @@ class Vector {
 
 	    return new Vector(v);
 
+	}
+	else {
+	    throw 'Expected an Integer';
 	}
 	
 
@@ -89,58 +98,13 @@ class Vector {
 	    
 
 	}
+	else {
+	    throw 'Expected a Vector.';
+	}
     
     }
 }
 
-class Matrix {
-    constructor(matrix) {
-	this.matrix = matrix;
-    }
-
-    add(other) {
-	/*
-        Adds two matrices.
-    
-        @param other: a matrix
-        @param initialized matrix
-        @returns: matrix
-        */
-	let mtx = this.matrix.map((n, i) =>{return n.map((k,j) => {return k + other.matrix[i,j]})});
-	return new Matrix(mtx);
-    }
-    sub(other) {
-	/*
-
-        Subtracts two matrices.
-        @param other: Matrix
-        @param initialized matrix
-        @returns: matrix
-        */
-	let mtx = this.matrix.map((n, i) => {return n.map((k,j) => {return k - other.matrix[i][j]})});
-
-	return new Matrix(mtx);
-    }
-    mulByScalar(scalar) {
-	/* 
-        multiplies a matrix by a scalar.
-
-        @param scalar: scalar
-        @param initialized matrix
-
-        @returns: matrix
-
-
-       */
-	let mtx = this.matrix.map((n) => { return n.map((k) => { return k * scalar; })});
-
-	return new Matrix(mtx);
-    }
-}
-		
-    
     
 
-    
-
-module.exports = { Vector, Matrix }
+module.exports = {Vector}
