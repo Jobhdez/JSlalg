@@ -105,8 +105,8 @@ class Vector {
     }
     magnitude() {
 	let initial = 0;
-	let lst = this.vector.map((n) => { return n*n })
-	let sum = lst.reduce((prev, curr) => prev + curr, initial)
+	let squares = this.vector.map((n) => { return n*n })
+	let sum = squares.reduce((prev, curr) => prev + curr, initial)
 
 	return Math.sqrt(sum)
     }
