@@ -103,6 +103,17 @@ class Vector {
 	}
     
     }
+    magnitude() {
+	let initial = 0;
+	let lst = this.vector.map((n) => { return n*n })
+	let sum = lst.reduce((prev, curr) => prev + curr, initial)
+
+	return Math.sqrt(sum)
+    }
+
+    isUnitVector() {
+	return this.magnitude() === 1
+    }
 }
 
     
