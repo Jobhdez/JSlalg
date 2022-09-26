@@ -24,6 +24,18 @@ describe('linearAlgebra', function () {
         let v5 = new lVec.Vector([5,12])
         expect(v4.dotP(v5)).to.eql(66)
     })
+    it('test magnitude', () => {
+	let vec = new lVec.Vector([6,8])
+	expect(vec.magnitude()).to.eql(10)
+    })
+    it('test unit vector (false)', () => {
+	let vec2 = new lVec.Vector([6,8])
+	expect(vec2.isUnitVector()).to.eql(false)
+    })
+    it('test unit vector (true)', () => {
+	let vec3 = new lVec.Vector([1,0,0])
+	expect(vec3.isUnitVector()).to.eql(true)
+    })
     it('test matrix addition', () => {
         let m1 = new lMat.Matrix([[2,3,4], [5,6,7]])
         let m2 = new lMat.Matrix([[3,4,5], [5,6,7]])
