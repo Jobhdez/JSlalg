@@ -2,7 +2,7 @@
 This was a small exercise to learn JS
 
 # About
-I wrote some basic vector and matrix classes so I can learn to write comfortably in JavaScript.
+I wrote some basic vector and matrix and polynomial classes so I can learn to write comfortably in JavaScript.
 
 ## Installation
 Clone this repo.
