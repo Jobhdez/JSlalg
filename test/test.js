@@ -46,4 +46,8 @@ describe('linearAlgebra', function () {
         let m3 = new lMat.Matrix([[2,3,5], [5,6,7]]);
         expect (m3.mulByScalar(2)).to.eql(new lMat.Matrix([[4,6,10], [10,12,14]]))
     })
+    it('test matrix transpose', () => {
+	let m4 = new lMat.Matrix([[2,3,4], [5,6,7]])
+	expect(m4.transpose()).to.eql(new lMat.Matrix([[2,5], [3,6], [4,7]]))
+    })
 })
