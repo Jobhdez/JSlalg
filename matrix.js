@@ -61,6 +61,21 @@ class Matrix {
 	    throw 'Expected an Integer.';
 	}
     }
+    transpose() {
+	return new Matrix(this.matrix[0].map((n,i)=> { return getFirsts(this.matrix, i)}))
+    }
+}
+
+function getFirsts(matrix, index) {
+    /* Gets the ith index of each row in the matrix.
+
+       example: getFirsts([[3,4,5],[6,7,8]], 0) -> [3,6]
+    */
+    let firsts = []
+    for (let i in matrix) {
+	firsts[i] = matrix[i][index]
+    }
+    return firsts
 }
 
 module.exports = {Matrix}
