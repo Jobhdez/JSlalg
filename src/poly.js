@@ -7,7 +7,7 @@ class Polynomial {
     }
     degree() {
         /* get the degree of a polynomial */
-        return this.coefficients.length()
+        return this.coefficients.length
     }
     add(other) {
         if (other instanceof Polynomial) {
