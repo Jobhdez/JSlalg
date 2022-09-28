@@ -10,6 +10,7 @@ class Polynomial {
         return this.coefficients.length - 1
     }
     add(other) {
+        // adds two polynomials
         if (other instanceof Polynomial) {
             return new Polynomial(this.coefficients.map((n,i) => { return n + other.coefficients[i]}))
         }
@@ -19,6 +20,7 @@ class Polynomial {
     }
 
     sub(other) {
+        // substracts two polynomials
 
         if (other instanceof Polynomial) {
             return new Polynomial(this.coefficients.map((n, i) => { return n - other.coefficients[i]}))
@@ -30,6 +32,7 @@ class Polynomial {
 
     }
     derive() {
+        // takes the derivative of a polynomial
         let coeffs = []
         let exponent = this.degree()
         for (let i = 0; i < this.coefficients.length - 1; i++) {
@@ -40,6 +43,7 @@ class Polynomial {
     }
 
     evalPoly(x) {
+        // evaluates a polynomial
         if (Number.isInteger(x)) {
             let degree = this.degree()
             let solution = 0
