@@ -25,7 +25,7 @@ You can play with it by:
 // vectors
 //--------------- 
 
-let v = require('./linearalgebra')
+let v = require('./vector')
 
 let v1 = new v.Vector([3,4,5])
 
@@ -48,13 +48,15 @@ v4.isUnitVector() // returns true
 // matrices
 //-------------
 
-let m1 = new v.Matrix([[2,3,4],[4,5,6]])
+let m = require('./matrix')
+
+let m1 = new m.Matrix([[2,3,4],[4,5,6]])
 
 m1.add(m1) // returns Matrix { matrix: [[4,6,8], [8,10,12]] }
 
 m1.mulByScalar(3) // returns Matrix { matrix: [[6,9,12], [12,15,18]] }
 
-let m4 = new v.Matrix([[2,3,4], [5,6,7]])
+let m4 = new m.Matrix([[2,3,4], [5,6,7]])
 
 m4.transpose() // returns Matrix { matrix: [[2,5], [3,6], [4,7]] }
 ```
