@@ -5,7 +5,7 @@ This was a small exercise to learn JS
 I wrote some basic vector and matrix and polynomial classes so I can learn to write comfortably in JavaScript.
 
 ## Installation
-Clone this repo: `git@github.com:Jobhdez/classesJS.git`
+Clone this repo: `git clone git@github.com:Jobhdez/classesJS.git`
 
 Install Node.
 
