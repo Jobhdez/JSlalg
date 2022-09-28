@@ -5,13 +5,19 @@ This was a small exercise to learn JS
 I wrote some basic vector and matrix and polynomial classes so I can learn to write comfortably in JavaScript.
 
 ## Installation
-Clone this repo: `git clone git@github.com:Jobhdez/classesJS.git`
+1. Clone this repo: `git clone git@github.com:Jobhdez/classesJS.git`
 
-Install Node.
+2. Install Node:
 
-Navigate to the src code directory.
 
-Start Node by typing `node` in your terminal.
+- MacOS: `brew install node`
+[Homebrew](https://brew.sh)
+
+- Ubuntu: `sudo apt install nodejs`
+
+3. Navigate to the src code directory: `cd classesJS`
+
+4. Start Node by typing `node` in your terminal.
 
 You can play with it by:
 
