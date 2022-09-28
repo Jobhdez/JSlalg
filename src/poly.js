@@ -7,11 +7,11 @@ class Polynomial {
     }
     degree() {
         /* get the degree of a polynomial */
-        return this.coefficients.length
+        return this.coefficients.length - 1
     }
     add(other) {
         if (other instanceof Polynomial) {
-            return this.coefficients.map((n,i) => { return n + other.coefficients[i]})
+            return new Polynomial(this.coefficients.map((n,i) => { return n + other.coefficients[i]}))
         }
         else {
             throw "Exp not a Polynomial"
@@ -21,7 +21,7 @@ class Polynomial {
     sub(other) {
 
         if (other instanceof Polynomial) {
-            return this.coefficients.map((n, i) => { return n - other.coefficients[i]})
+            return new Polynomial(this.coefficients.map((n, i) => { return n - other.coefficients[i]}))
         }
         else {
             throw "other is not a polynomial"
@@ -32,7 +32,7 @@ class Polynomial {
     derive() {
         let coeffs = []
         let exponent = this.degree()
-        for (let i in this.coefficients) {
+        for (let i = 0; i < this.coefficients.length - 1; i++) {
             coeffs[i] = this.coefficients[i] * exponent 
             exponent -= 1
         }
@@ -41,7 +41,7 @@ class Polynomial {
 
     evalPoly(x) {
         if (Number.isInteger(x)) {
-            let degree = this.coefficients.length()
+            let degree = this.degree()
             let solution = 0
             for (let i in this.coefficients) {
                 solution += (x ** degree) * this.coefficients[i]
@@ -55,3 +55,5 @@ class Polynomial {
 
     }
 }
+
+module.exports = {Polynomial}
