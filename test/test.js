@@ -1,8 +1,8 @@
 const mocha = require('mocha');
 const chai = require('chai');
 
-const lVec = require('../vector');
-const lMat = require('../matrix');
+const lVec = require('../src/vector');
+const lMat = require('../src/matrix');
 
 const expect = chai.expect;
 
