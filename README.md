@@ -21,7 +21,7 @@ I wrote some basic vector and matrix and polynomial classes so I can learn to wr
 
 You can play with it by:
 
-```
+```JS
 // vectors
 //--------------- 
 
