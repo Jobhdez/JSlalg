@@ -1,7 +1,5 @@
 # classesJS
-This was a small exercise to learn JS
-
-# About
+This was a small exercise to learn JS.
 I wrote some basic vector and matrix and polynomial classes so I can learn to write comfortably in JavaScript.
 
 ## Installation
@@ -15,7 +13,7 @@ I wrote some basic vector and matrix and polynomial classes so I can learn to wr
 
 - Ubuntu: `sudo apt install nodejs`
 
-3. Navigate to the src code directory: `cd classesJS`
+3. Navigate to the src code directory: `cd ~/classesJS/src`
 
 4. Start Node by typing `node` in your terminal.
 
