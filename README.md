@@ -17,7 +17,7 @@ I wrote some basic vector and matrix and polynomial classes so I can learn to wr
 
 4. Start Node by typing `node` in your terminal.
 
-You can play with it by:
+## Example
 
 ```JS
 // vectors
