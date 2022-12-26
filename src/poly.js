@@ -31,7 +31,7 @@ class Polynomial {
 
 
     }
-    derive() {
+    diff() {
         // takes the derivative of a polynomial
         let coeffs = []
         let exponent = this.degree()
