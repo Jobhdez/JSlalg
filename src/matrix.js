@@ -40,6 +40,22 @@ class Matrix {
 	    throw 'Expected a Matrix.';
 	}
     }
+    mulSqMat(other) {
+	let resultMatrix = []
+	for (let i = 0; i < this.matrix.length; i++) {
+	    resultMatrix[i] = []
+	}
+	for (let i = 0; i < this.matrix.length; i++) {
+	    for (let j = 0; j < this.matrix.length; j++) {
+		resultMatrix[i][j] = 0;
+		for (let k = 0; k < this.matrix.length; k++) {
+		    resultMatrix[i][j] +=  this.matrix[i][k] * other.matrix[k][j];
+		}
+	    }
+	}
+	return new Matrix(resultMatrix);
+
+    }
     mulByScalar(scalar) {
 	/* 
         multiplies a matrix by a scalar.
