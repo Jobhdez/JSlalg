@@ -60,9 +60,14 @@ describe('linearAlgebra', function () {
 
     it('test matrix transpose', () => {
         let m4 = new lMat.Matrix([[2,3,4], [5,6,7]])
-	    expect(m4.transpose()).to.eql(new lMat.Matrix([[2,5], [3,6], [4,7]]))
+	expect(m4.transpose()).to.eql(new lMat.Matrix([[2,5], [3,6], [4,7]]))
     })
 
+    it('test square matrix-matrix multiplication', () => {
+	let m5 = new lMat.Matrix([[3,4], [4,5]]);
+	expect(m5.mulSqMat(m5)).to.eql(new lMat.Matrix([[25,32],[32,41]]));
+    })				       
+	
     it('test polynomial degree', () => {
         let poly = new p.Polynomial([2,3,5,1])
         expect(poly.degree()).to.eql(3)
@@ -84,7 +89,7 @@ describe('linearAlgebra', function () {
 
     it('test polynomial derive', () => {
         let poly6 = new p.Polynomial([2,3,5,1])
-        expect(poly6.derive()).to.eql(new p.Polynomial([6, 6, 5]))
+        expect(poly6.diff()).to.eql(new p.Polynomial([6, 6, 5]))
     })
 
     it('test polynomial evaluation', () => {
