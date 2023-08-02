@@ -3,6 +3,7 @@ const chai = require('chai');
 
 const lVec = require('../src/vector');
 const lMat = require('../src/matrix');
+const matrixVec = require('../src/matrixVector');
 
 const p = require('../src/poly');
 
@@ -66,7 +67,12 @@ describe('linearAlgebra', function () {
     it('test square matrix-matrix multiplication', () => {
 	let m5 = new lMat.Matrix([[3,4], [4,5]]);
 	expect(m5.mulSqMat(m5)).to.eql(new lMat.Matrix([[25,32],[32,41]]));
-    })				       
+    })
+
+    it('test matrix-vec multiplication', () => {
+	let mv = new matrixVec.MatrixVector([[1,2,3],[4,5,6]], [1,2,3]);
+	expect(mv.matrixVecMul()).to.eql([18,45])
+    })
 	
     it('test polynomial degree', () => {
         let poly = new p.Polynomial([2,3,5,1])
