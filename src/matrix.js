@@ -80,6 +80,12 @@ class Matrix {
     transpose() {
 	return new Matrix(this.matrix[0].map((n,i)=> { return getFirsts(this.matrix, i)}))
     }
+
+    power(other) {
+	return new Matrix(this.matrix.map((row) => {
+	    return row.map((column) => {
+		return Math.pow(column, other)})}))
+    }
 }
 
 function getFirsts(matrix, index) {
