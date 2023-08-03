@@ -47,6 +47,19 @@ describe('linearAlgebra', function () {
 	expect(vec3.isUnitVector()).to.eql(true)
     })
 
+    it('test element wise power, scalar', () => {
+	let v4 = new lVec.Vector([2, 3, 4]);
+	let scalar = 2;
+	expect(v4.power(scalar)).to.eql(new lVec.Vector([4, 9, 16]));
+    })
+
+    it('test element wise power, vector', () => {
+	let v5 = new lVec.Vector([2, 3]);
+	let v6 = new lVec.Vector([1,2,3]);
+	expect(v5.power(v6)).to.eql(new lMat.Matrix([[2, 3], [4, 9], [8, 27]]));
+    })
+	       
+				  
     it('test matrix addition', () => {
         let m1 = new lMat.Matrix([[2,3,4], [5,6,7]])
         let m2 = new lMat.Matrix([[3,4,5], [5,6,7]])
