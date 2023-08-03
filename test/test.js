@@ -82,6 +82,12 @@ describe('linearAlgebra', function () {
 	expect(m5.mulSqMat(m5)).to.eql(new lMat.Matrix([[25,32],[32,41]]));
     })
 
+    it('test element wise matrix power', () => {
+        let m6 = new lMat.Matrix([[2,3,5], [5,6,7]]);
+        expect (m6.power(2)).to.eql(new lMat.Matrix([[4, 9, 25], [25,36,49]]))
+    })
+    
+
     it('test matrix-vec multiplication', () => {
 	let mv = new matrixVec.MatrixVector([[1,2,3],[4,5,6]], [1,2,3]);
 	expect(mv.matrixVecMul()).to.eql([18,45])
