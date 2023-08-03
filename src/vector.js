@@ -7,6 +7,7 @@
   
 */
 
+const M = require('./matrix')
 
 class Vector {
     constructor(vector) {
@@ -114,6 +115,28 @@ class Vector {
     isUnitVector() {
 	return this.magnitude() === 1
     }
+
+    power(other) {
+	if (Number.isInteger(other)) {
+	    let vec = this.vector.map((n) => { return Math.pow(n, other) })
+	    return new Vector(vec)
+	}
+
+	else {
+	    let resultMatrix = []
+	    for (let i = 0; i < other.vector.length; i++) {
+		resultMatrix[i] = [];
+	    }
+	    
+	    for (let i = 0; i < other.vector.length; i++) {
+		for (let j = 0; j < this.vector.length; j++) {
+		    resultMatrix[i][j] = Math.pow(this.vector[j], other.vector[i]);
+		}
+	    }
+	    return new M.Matrix(resultMatrix);
+	}
+    }
+		    
 }
 
     
