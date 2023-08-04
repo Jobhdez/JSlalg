@@ -58,6 +58,12 @@ describe('linearAlgebra', function () {
 	let v6 = new lVec.Vector([1,2,3]);
 	expect(v5.power(v6)).to.eql(new lMat.Matrix([[2, 3], [4, 9], [8, 27]]));
     })
+
+    it('test exponential of vector', () => {
+	let v7 = new lVec.Vector([3, 4, 5]);
+	expect(v7.exp()).to.eql(new lVec.Vector([20.085536923187668, 54.598150033144236, 148.4131591025766]))
+
+    })
 	       
 				  
     it('test matrix addition', () => {
