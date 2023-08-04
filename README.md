@@ -17,7 +17,43 @@ I wrote some basic vector and matrix and polynomial classes so I can learn to wr
 
 4. Start Node by typing `node` in your terminal.
 
-## Example
+## operations
+
+### basic operations on vectors and matrices
+
+- Element-wise add
+
+- Element-wise substract
+
+- Element-wise multiply
+
+- Element-wise exponentiation
+
+- Element-wise exponential
+
+- Element-wise natural logarithm
+
+### Linear algebra
+
+#### vectors
+
+- vector * scalar
+
+- dot product
+
+- magnitude
+
+- isUnitVector
+
+#### Matrices
+
+- transpose
+
+- matrix * scalar
+
+- Square matrix * Square matrix
+
+## Example 
 
 ```JS
 // vectors
