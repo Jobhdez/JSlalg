@@ -98,13 +98,22 @@ describe('linearAlgebra', function () {
         expect (m6.power(2)).to.eql(new lMat.Matrix([[4, 9, 25], [25,36,49]]))
     })
 
-     it('test element wise exp  matrix power', () => {
+     it('test element wise exp  matrix', () => {
          let m7 = new lMat.Matrix([[4,5,6], [6,7,8]]);
          expect(m7.exp()).to.eql(new lMat.Matrix( [
     [ 54.598150033144236, 148.4131591025766, 403.4287934927351 ],
     [ 403.4287934927351, 1096.6331584284585, 2980.9579870417283 ]
 	 ]))
      })
+
+    it('test element wise log  matrix', () => {
+        let m8 = new lMat.Matrix([[4,5,6], [6,6,7]]);
+         expect(m8.log()).to.eql(new lMat.Matrix( [
+    [ 1.3862943611198906, 1.6094379124341003, 1.791759469228055 ],
+    [ 1.791759469228055, 1.791759469228055, 1.9459101490553132 ]
+	 ]))
+    })
+   
 
     it('test matrix-vec multiplication', () => {
 	let mv = new matrixVec.MatrixVector([[1,2,3],[4,5,6]], [1,2,3]);
