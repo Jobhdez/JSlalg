@@ -64,6 +64,11 @@ describe('linearAlgebra', function () {
 	expect(v7.exp()).to.eql(new lVec.Vector([20.085536923187668, 54.598150033144236, 148.4131591025766]))
 
     })
+
+     it('test natural logarithm of vector', () => {
+	let v8 = new lVec.Vector([3, 4, 6]);
+	 expect(v8.log()).to.eql(new lVec.Vector([1.0986122886681096, 1.3862943611198906, 1.791759469228055]))
+     })
 	       
 				  
     it('test matrix addition', () => {
