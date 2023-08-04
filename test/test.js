@@ -97,7 +97,14 @@ describe('linearAlgebra', function () {
         let m6 = new lMat.Matrix([[2,3,5], [5,6,7]]);
         expect (m6.power(2)).to.eql(new lMat.Matrix([[4, 9, 25], [25,36,49]]))
     })
-    
+
+     it('test element wise exp  matrix power', () => {
+         let m7 = new lMat.Matrix([[4,5,6], [6,7,8]]);
+         expect(m7.exp()).to.eql(new lMat.Matrix( [
+    [ 54.598150033144236, 148.4131591025766, 403.4287934927351 ],
+    [ 403.4287934927351, 1096.6331584284585, 2980.9579870417283 ]
+	 ]))
+     })
 
     it('test matrix-vec multiplication', () => {
 	let mv = new matrixVec.MatrixVector([[1,2,3],[4,5,6]], [1,2,3]);
