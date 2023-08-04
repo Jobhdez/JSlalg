@@ -93,6 +93,15 @@ class Matrix {
 		return Math.exp(column)
 	    })}))
     }
+
+    log() {
+	return new Matrix(this.matrix.map((row) => {
+	    return row.map((column) => {
+		return Math.log(column)
+	    })}))
+    }
+			  
+	    
 }
 
 function getFirsts(matrix, index) {
