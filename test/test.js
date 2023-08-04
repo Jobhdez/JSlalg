@@ -9,7 +9,7 @@ const p = require('../src/poly');
 
 const expect = chai.expect;
 
-describe('linearAlgebra', function () {
+describe('vector tests', function () {
 
     it('test vector sum', () => {
         let v = new lVec.Vector([3,4,5,6]);
@@ -69,6 +69,9 @@ describe('linearAlgebra', function () {
 	let v8 = new lVec.Vector([3, 4, 6]);
 	 expect(v8.log()).to.eql(new lVec.Vector([1.0986122886681096, 1.3862943611198906, 1.791759469228055]))
      })
+})
+
+describe('matrix tests', function () {
 	       
 				  
     it('test matrix addition', () => {
@@ -113,12 +116,19 @@ describe('linearAlgebra', function () {
     [ 1.791759469228055, 1.791759469228055, 1.9459101490553132 ]
 	 ]))
     })
+})
+
+describe('Matrix-Vec tests', function () {
    
 
     it('test matrix-vec multiplication', () => {
 	let mv = new matrixVec.MatrixVector([[1,2,3],[4,5,6]], [1,2,3]);
 	expect(mv.matrixVecMul()).to.eql([18,45])
     })
+
+})
+
+describe('Polynomial tests', function () {
 	
     it('test polynomial degree', () => {
         let poly = new p.Polynomial([2,3,5,1])
