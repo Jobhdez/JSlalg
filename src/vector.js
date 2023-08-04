@@ -141,6 +141,12 @@ class Vector {
 	    return Math.exp(n)
 	}))
     }
+
+    log() {
+	return new Vector(this.vector.map((n) => {
+	    return Math.log(n)
+	}))
+    }
 		    
 }
 
