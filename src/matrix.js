@@ -86,6 +86,13 @@ class Matrix {
 	    return row.map((column) => {
 		return Math.pow(column, other)})}))
     }
+
+    exp() {
+	return new Matrix(this.matrix.map((row) => {
+	    return row.map((column) => {
+		return Math.exp(column)
+	    })}))
+    }
 }
 
 function getFirsts(matrix, index) {
