@@ -136,6 +136,11 @@ class Vector {
 	    return new M.Matrix(resultMatrix);
 	}
     }
+    exp() {
+	return new Vector(this.vector.map((n) => {
+	    return Math.exp(n)
+	}))
+    }
 		    
 }
 
