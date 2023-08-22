@@ -100,6 +100,24 @@ class Matrix {
 		return Math.log(column)
 	    })}))
     }
+
+    determinant() {
+	let sum = 0;
+	function twodDeterminant(matrix) {
+	if (matrix.length === 2) {
+	    let el1 = matrix[0][0] * matrix[1][1];
+	    let el2 = matrix[0][1] * matrix[1][0]
+	    return el1 - el2;
+	}
+    }
+
+
+	let e1 = this.matrix[0][0] * twodDeterminant(removeColumn(this.matrix, 0))
+        let e2 = this.matrix[0][1] * twodDeterminant(removeColumn(this.matrix, 1))
+        let e3 = this.matrix[0][2] * twodDeterminant(removeColumn(this.matrix, 2))
+
+	return e1 - e2 + e3
+    }
 			  
 	    
 }
@@ -116,4 +134,9 @@ function getFirsts(matrix, index) {
     return firsts
 }
 
+function removeColumn(matrix, column) {
+    let ma2 = matrix.filter((_, i) => i != 0);
+
+    return ma2.map((i) => i.filter((_, j) => j != column));
+}
 module.exports = {Matrix}
