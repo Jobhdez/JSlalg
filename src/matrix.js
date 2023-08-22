@@ -102,6 +102,20 @@ class Matrix {
     }
 
     determinant() {
+
+	/*
+
+	  the determinant of a 3x3 matrix consits of taking the first row and for each
+	  element i of the first row you first need to remove the column of i. You also need to
+	  take the rest of the elements in the same row as i. Then you take the 2 Dimensional determinant
+	  of the left over rows.
+          Example:
+	  
+              > let m1 = [[6,1,1], [4,-2, 5], [2,8,7]]
+              > let m3 = new m.Matrix(m1)
+	      > m3.determinant()
+	      -306
+	 */
 	let sum = 0;
 	function twodDeterminant(matrix) {
 	if (matrix.length === 2) {
