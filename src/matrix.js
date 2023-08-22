@@ -1,3 +1,20 @@
+/*
+
+  This module consists of the Matrix class and this class is made up of basic matrix operations
+  and some linear algebra.
+
+  Example Usage:
+
+  > let mat = require('./matrix.j')
+  > let m1 = new mat.Matrix([[3,45,6,6], [4,4,5,6]])
+  > m1.add(m1)
+  Matrix([[6, 90, 12, 12], [8,8,10,12]])
+
+
+ */
+
+
+
 class Matrix {
     constructor(matrix) {
 	this.matrix = matrix;
