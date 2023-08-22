@@ -13,6 +13,8 @@ I wrote some basic vector and matrix and polynomial classes so I can learn to wr
 
 - Ubuntu: `sudo apt install nodejs`
 
+- Arch Linux: `pacman -S nodejs`
+
 3. Navigate to the src code directory: `cd ~/classesJS/src`
 
 4. Start Node by typing `node` in your terminal.
@@ -52,6 +54,8 @@ I wrote some basic vector and matrix and polynomial classes so I can learn to wr
 - matrix * scalar
 
 - Square matrix * Square matrix
+
+- determinant of 3x3 (square) matrices
 
 ## Example 
 
