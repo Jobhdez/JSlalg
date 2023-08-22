@@ -116,6 +116,11 @@ describe('matrix tests', function () {
     [ 1.791759469228055, 1.791759469228055, 1.9459101490553132 ]
 	 ]))
     })
+
+    it('test determinant of a 3x3 matrix', () => {
+	let m9 =  new lMat.Matrix([[6,1,1], [4,-2, 5], [2,8,7]])
+	expect(m9.determinant()).to.eql(-306)
+    })
 })
 
 describe('Matrix-Vec tests', function () {
