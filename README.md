@@ -100,7 +100,6 @@ m4.transpose() // returns Matrix { matrix: [[2,5], [3,6], [4,7]] }
 ```
 
 ## tests
-to run the tests do:
 ```
 npm run test
 ```
