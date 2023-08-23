@@ -1,5 +1,5 @@
-# classesJS
-This was a small (toy) exercise to learn JS. 
+# JSlalg
+This is a small (toy) exercise to learn JS. 
 I wrote some basic vector and matrix and polynomial classes so I can learn to write comfortably in JavaScript.
 
 ## Installation
