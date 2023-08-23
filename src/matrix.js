@@ -16,6 +16,19 @@
 
 
 class Matrix {
+	/* Matrix class consisting of basic matrix operations such as:
+	        -- matrix + matrix
+			-- matrix - matrix
+			-- matrix * scalar
+			-- matrix * matrix
+			-- tranpose
+			-- log
+			-- exp
+			-- pow
+
+	  and linear algebra such as:
+	        -- determinant of 3x3 matrices
+	*/
     constructor(matrix) {
 	this.matrix = matrix;
     }
@@ -58,6 +71,10 @@ class Matrix {
 	}
     }
     mulSqMat(other) {
+		/* Square Matrix * Square Matrix
+		
+		
+		*/
 	let resultMatrix = []
 	for (let i = 0; i < this.matrix.length; i++) {
 	    resultMatrix[i] = []
