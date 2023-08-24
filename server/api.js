@@ -124,6 +124,13 @@ app.post('/power', (req, res) => {
             res.json(resultVec.vector)
         }
     }
+    else {
+        let mat = new Mat.Matrix(lalgExp2)
+        if (lalgExp === 'power') {
+            let resultMat = mat.power(lalgExp3)
+            res.json(resultMat.matrix)
+        }
+    }
 
 
 })
