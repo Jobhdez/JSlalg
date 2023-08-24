@@ -135,6 +135,36 @@ app.post('/power', (req, res) => {
 
 })
 
+app.post('/exp', (req, res) => {
+
+    const exp = req.body.expr1
+    const exp2 = req.body.expr2
+
+
+    let cleanExp = exp.replace(/'/g, '"');
+    let stringExp = JSON.stringify(cleanExp)
+    const cleanExp2 = exp2.replace(/'/g, '"');
+    let lalgExp = JSON.parse(stringExp);
+    let lalgExp2 = JSON.parse(cleanExp2);
+
+    if (Number.isInteger(lalgExp2[0])) {
+        let vec = new Vec.Vector(lalgExp2)
+        if (lalgExp === 'exponentiation') {
+            let resultVec = vec.exp()
+            res.json(resultVec.vector)
+        }
+    }
+    else {
+        let mat = new Mat.Matrix(lalgExp2)
+        if (lalgExp === 'exponentiation') {
+            let resultMat = mat.exp()
+            res.json(resultMat.matrix)
+        }
+    }
+
+
+})
+
 
 
 const server = app.listen(3000, () => 
