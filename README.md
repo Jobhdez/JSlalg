@@ -71,6 +71,36 @@ let m4 = new m.Matrix([[2,3,4], [5,6,7]])
 m4.transpose() // returns Matrix { matrix: [[2,5], [3,6], [4,7]] }
 ```
 
+### API
+```
+* cd server
+* DEBUG=express* node api.js
+```
+
+After starting the server you can, for example, send a request to 
+```
+http://localhost:3000
+```
+
+like so, using Python:
+```
+>>> import requests
+>>> data = {'expr1': '[2,3,4]', 'expr2': '[3,4,5]'}
+>>> url = 'http://localhost:3000/add/'
+>>> re = requests.post(url, data=data)
+>>> re.json()
+{exp: [5,7,9]}
+```
+
+In addtion to `add/`, additional endpoints include:
+
+- `sub/`
+- `mul/`
+- `exp`
+- `power/`
+- `log/`
+
+
 ### How to run the tests
 ```
 * npm run test
