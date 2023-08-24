@@ -1,8 +1,10 @@
 # JSlalg
-This is a small (toy) exercise to learn JS. 
+This is a small (toy) exercise to learn JS.
+
 I wrote some basic vector and matrix and polynomial classes so I can learn to write comfortably in JavaScript.
 
-## Installation
+I also built a little API in express.
+## Dependencies
 1. Clone this repo: `git clone git@github.com:Jobhdez/classesJS.git`
 
 2. Install Node:
@@ -15,49 +17,19 @@ I wrote some basic vector and matrix and polynomial classes so I can learn to wr
 
 - Arch Linux: `pacman -S nodejs`
 
-3. Navigate to the src code directory: `cd ~/classesJS/src`
+## Usage
+1. Navigate to the src code directory:
+```
+* cd ~/classesJS/src
+```
 
-4. Start Node by typing `node` in your terminal.
+2. Start Node by typing `node` in your terminal.
+```
+* node
+* m = require('./matrix')
+```
 
-## operations
-
-### basic operations on vectors and matrices
-
-- Element-wise add
-
-- Element-wise substract
-
-- Element-wise multiply
-
-- Element-wise exponentiation
-
-- Element-wise exponential
-
-- Element-wise natural logarithm
-
-### Linear algebra
-
-#### vectors
-
-- vector * scalar
-
-- dot product
-
-- magnitude
-
-- isUnitVector
-
-#### Matrices
-
-- transpose
-
-- matrix * scalar
-
-- Square matrix * Square matrix
-
-- determinant of 3x3 (square) matrices
-
-## Example 
+### Example 
 
 ```JS
 // vectors
@@ -99,7 +71,46 @@ let m4 = new m.Matrix([[2,3,4], [5,6,7]])
 m4.transpose() // returns Matrix { matrix: [[2,5], [3,6], [4,7]] }
 ```
 
-## tests
+### How to run the tests
 ```
-npm run test
+* npm run test
 ```
+
+## Supported linear algebra
+
+### basic operations on vectors and matrices
+
+- Element-wise add
+
+- Element-wise substract
+
+- Element-wise multiply
+
+- Element-wise exponentiation
+
+- Element-wise exponential
+
+- Element-wise natural logarithm
+
+### Linear algebra
+
+#### vectors
+
+- vector * scalar
+
+- dot product
+
+- magnitude
+
+- isUnitVector
+
+#### Matrices
+
+- transpose
+
+- matrix * scalar
+
+- Square matrix * Square matrix
+
+- determinant of 3x3 (square) matrices
+
