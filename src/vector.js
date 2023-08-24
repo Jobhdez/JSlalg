@@ -1,10 +1,6 @@
-// author: Job Hernandez <hj93@protonmail.com>
 /*
-  This is just a small implementation of some basic linear algebra :-)
-
-  Mainly to practice my JS skills, nothing serious.
-
-  
+  This module consists of the Vector class made up of basic element wise operations and some basic 
+  linear algebra.  
 */
 
 const M = require('./matrix')
