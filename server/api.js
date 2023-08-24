@@ -70,31 +70,62 @@ app.post('/mul', (req, res) => {
         let vec2 = new Vec.Vector(lalgExp2)
         let resultVec = vec1.dotP(vec2)
         res.json({expr: resultVec.vector})
+
     } else if (Number.isInteger(lalgExp[0]) && Number.isInteger(lalgExp2)) {
 
         let vec1 = new Vec.Vector(lalgExp)
         let resultVec = vec1.mulByScalar(lalgExp2)
         res.json({expr: resultVec.vector})
+
     } else if (Number.isInteger(lalgExp) && Number.isInteger(lalgExp2[0])) {
         let vec1 = new Vec.Vector(lalgExp2)
         let resultVec = vec1.mulByScalar(lalgExp)
         res.json({expr: resultVec.vector})
+
     } else if (Array.isArray(lalgExp[0]) && Array.isArray(lalgExp2[0])) {
         let mat1 = new Mat.Matrix(lalgExp)
         let mat2 = new Mat.Matrix(lalgExp2)
         let resultMat = mat1.mulSqMat(mat2)
         res.json({expr: resultMat.matrix})
+
     } else if (Array.isArray(lalgExp[0]) && Number.isInteger(lalgExp2)) {
 
         let mat = new Mat.Matrix(lalgExp);
         let resultMat = mat.mulByScalar(lalgExp2)
         res.json({expr: resultMat.matrix})
+        
     } else {
         let matrix = new Mat.Matrix(lalgExp2)
         let resultMatrix = matrix.mulByScalar(lalgExp)
 
         res.json({expr: resultMatrix.matrix})
     }
+})
+
+app.post('/power', (req, res) => {
+
+    const exp = req.body.expr1
+    const exp2 = req.body.expr2
+    const exp3 = req.body.expr3
+
+
+    let cleanExp = exp.replace(/'/g, '"');
+    let stringExp = JSON.stringify(cleanExp)
+    const cleanExp2 = exp2.replace(/'/g, '"');
+    const cleanExp3 = exp3.replace(/'/g, '"');
+    let lalgExp = JSON.parse(stringExp);
+    let lalgExp2 = JSON.parse(cleanExp2);
+    let lalgExp3 = JSON.parse(cleanExp3)
+
+    if (Number.isInteger(lalgExp2[0])) {
+        let vec = new Vec.Vector(lalgExp2)
+        if (lalgExp === 'power') {
+            let resultVec = vec.power(lalgExp3)
+            res.json(resultVec.vector)
+        }
+    }
+
+
 })
 
 
