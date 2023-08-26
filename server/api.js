@@ -202,6 +202,12 @@ app.post('/det', (req, res) => {
     hop.computeAlgExp(res, mat.determinant(), lalgExp2, lalgExp, 'det')
 })
 
+app.post('/transpose', (req, res) => {
+
+    let [mat, lalgExp, lalgExp2] = hop.makeMatrix(req)
+    hop.computeAlgExp(res, mat.transpose(), lalgExp2, lalgExp, 'transpose')
+})
+
 
 
 const server = app.listen(3000, () => 
