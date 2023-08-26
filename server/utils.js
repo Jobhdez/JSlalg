@@ -1,14 +1,11 @@
 let Mat = require('../src/matrix.js')
 
 function computeAlgExp(res, method, lalgExp2, lalgExp, exp1) {
-
-    if (Array.isArray(lalgExp2[0])) {
-	if (lalgExp === exp1) {
-	    let result = method
-	    res.json({expr: result})
+    if (lalgExp === exp1) {
+	let result = method
+	res.json({expr: result})
 	}
     }
-}
 
 function makeAlgObj(req, method) {
     const exp = req.body.expr1
