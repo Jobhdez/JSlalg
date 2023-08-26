@@ -92,13 +92,28 @@ like so, using Python:
 {exp: [5,7,9]}
 ```
 
-In addtion to `add/`, additional endpoints include:
+Matrix and Vector endpoints:
 
-- `sub/`
-- `mul/`
-- `exp`
-- `power/`
-- `log/`
+```
+- add/
+- sub/
+- mul/
+```
+Matrix endpoints:
+```
+- expm/
+- powerm/
+- logm/
+- determinant/
+- transpose/
+```
+Vector endpoints:
+
+```
+- expv/
+- powerv/
+- logv/
+```
 
 
 ### How to run the tests
