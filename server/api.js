@@ -103,6 +103,12 @@ app.post('/mul', (req, res) => {
     }
 })
 
+/*
+
+  Basic operations of Matrices
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ */
 app.post('/powerm', (req, res) => {
 
     const exp3 = req.body.expr3
@@ -123,7 +129,7 @@ app.post('/logm', (req, res) => {
 
 app.post('/expm', (req, res) => {
 
-    let [mat, lalgExp, lalgExp2] = hop.makeMatrix(req, new Mat.Matrix())
+    let [mat, lalgExp, lalgExp2] = hop.makeAlgObj(req, new Mat.Matrix())
     hop.computeAlgExp(res, mat.exp(), lalgExp2, lalgExp, 'exponentation')
 
 })
@@ -140,7 +146,36 @@ app.post('/transpose', (req, res) => {
     hop.computeAlgExp(res, mat.transpose(), lalgExp2, lalgExp, 'transpose')
 })
 
+/*
 
+  Basic linear algebra on vectors
+  ~~~~~~~~~~~~~~~~~~~~~~~~~
+  */
+
+app.post('/powerv', (req, res) => {
+
+    const exp3 = req.body.expr3
+    const cleanExp3 = exp3.replace(/'/g, '"');
+    let lalgExp3 = JSON.parse(cleanExp3)
+
+    let [vec, lalgExp, lalgExp2] = hop.makeAlgObj(req, new Vec.Vector())
+    hop.computeAlgExp(res, vec.power(lalgExp3), lalgExp2, lalgExp, 'power')
+
+
+})
+
+app.post('/logv', (req, res) => {
+
+    let [vec, lalgExp, lalgExp2] = hop.makeAlgObj(req, new Vec.Vector())
+    hop.computeAlgExp(res, vec.log(), lalgExp2, lalgExp, 'log')
+})
+
+app.post('/expv', (req, res) => {
+
+    let [vec, lalgExp, lalgExp2] = hop.makeAlgObj(req, new Vec.Vector())
+    hop.computeAlgExp(res, vec.exp(), lalgExp2, lalgExp, 'exponentiation')
+
+})
 
 const server = app.listen(3000, () => 
     console.log(`
