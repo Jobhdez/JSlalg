@@ -116,7 +116,7 @@ app.post('/powerm', (req, res) => {
     let lalgExp3 = JSON.parse(cleanExp3)
 
     let [mat, lalgExp, lalgExp2] = hop.makeAlgObj(req, new Mat.Matrix())
-    hop.computeAlgExp(res, mat.power(lalgExp3), lalgExp2, lalgExp, 'power')
+    hop.computeAlgExp(res, mat.power(lalgExp3), lalgExp, 'power')
 
 
 })
@@ -124,26 +124,26 @@ app.post('/powerm', (req, res) => {
 app.post('/logm', (req, res) => {
 
     let [mat, lalgExp, lalgExp2] = hop.makeAlgObj(req, new Mat.Matrix())
-    hop.computeAlgExp(res, mat.log(), lalgExp2, lalgExp, 'log')
+    hop.computeAlgExp(res, mat.log(), lalgExp, 'log')
 })
 
 app.post('/expm', (req, res) => {
 
     let [mat, lalgExp, lalgExp2] = hop.makeAlgObj(req, new Mat.Matrix())
-    hop.computeAlgExp(res, mat.exp(), lalgExp2, lalgExp, 'exponentation')
+    hop.computeAlgExp(res, mat.exp(), lalgExp, 'exponentation')
 
 })
 
 app.post('/det', (req, res) => {
 
     let [mat, lalgExp, lalgExp2] = hop.makeAlgObj(req, new Mat.Matrix())
-    hop.computeAlgExp(res, mat.determinant(), lalgExp2, lalgExp, 'det')
+    hop.computeAlgExp(res, mat.determinant(), lalgExp, 'det')
 })
 
 app.post('/transpose', (req, res) => {
 
     let [mat, lalgExp, lalgExp2] = hop.makeAlgObj(req, new Mat.Matrix())
-    hop.computeAlgExp(res, mat.transpose(), lalgExp2, lalgExp, 'transpose')
+    hop.computeAlgExp(res, mat.transpose(), lalgExp, 'transpose')
 })
 
 /*
@@ -159,7 +159,7 @@ app.post('/powerv', (req, res) => {
     let lalgExp3 = JSON.parse(cleanExp3)
 
     let [vec, lalgExp, lalgExp2] = hop.makeAlgObj(req, new Vec.Vector())
-    hop.computeAlgExp(res, vec.power(lalgExp3), lalgExp2, lalgExp, 'power')
+    hop.computeAlgExp(res, vec.power(lalgExp3), lalgExp, 'power')
 
 
 })
@@ -167,13 +167,13 @@ app.post('/powerv', (req, res) => {
 app.post('/logv', (req, res) => {
 
     let [vec, lalgExp, lalgExp2] = hop.makeAlgObj(req, new Vec.Vector())
-    hop.computeAlgExp(res, vec.log(), lalgExp2, lalgExp, 'log')
+    hop.computeAlgExp(res, vec.log(), lalgExp, 'log')
 })
 
 app.post('/expv', (req, res) => {
 
     let [vec, lalgExp, lalgExp2] = hop.makeAlgObj(req, new Vec.Vector())
-    hop.computeAlgExp(res, vec.exp(), lalgExp2, lalgExp, 'exponentiation')
+    hop.computeAlgExp(res, vec.exp(), lalgExp, 'exponentiation')
 
 })
 
