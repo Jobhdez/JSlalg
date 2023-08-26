@@ -2,6 +2,7 @@ const Mat = require('../src/matrix')
 const Vec = require('../src/vector')
 const express = require('express')
 const bodyParser = require('body-parser');
+const hop = require('./utils')
 
 const app = express()
 app.use(express.json())
@@ -197,23 +198,8 @@ app.post('/log', (req, res) => {
 
 app.post('/det', (req, res) => {
 
-    const exp = req.body.expr1
-    const exp2 = req.body.expr2
-
-
-    let cleanExp = exp.replace(/'/g, '"');
-    let stringExp = JSON.stringify(cleanExp)
-    const cleanExp2 = exp2.replace(/'/g, '"');
-    let lalgExp = JSON.parse(stringExp);
-    let lalgExp2 = JSON.parse(cleanExp2);
-
-    if (Array.isArray(lalgExp2[0])) {
-        let mat = new Mat.Matrix(lalgExp2)
-        if (lalgExp === 'det') {
-            let result = mat.determinant()
-            res.json({expr: result})
-        }
-    }
+    let [mat, lalgExp, lalgExp2] = hop.makeMatrix(req)
+    hop.computeAlgExp(res, mat.determinant(), lalgExp2, lalgExp, 'det')
 })
 
 
@@ -222,3 +208,4 @@ const server = app.listen(3000, () =>
     console.log(`
     Server ready at: http://localhost:3000`),
 )
+
