@@ -103,7 +103,7 @@ app.post('/mul', (req, res) => {
     }
 })
 
-app.post('/power', (req, res) => {
+app.post('/powerm', (req, res) => {
 
     const exp3 = req.body.expr3
     const cleanExp3 = exp3.replace(/'/g, '"');
