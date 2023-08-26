@@ -188,11 +188,32 @@ app.post('/log', (req, res) => {
         let mat = new Mat.Matrix(lalgExp2)
         if (lalgExp === 'log') {
             let resultMat = mat.log()
-            res.json(resultMat.matrix)
+            res.json({expr: resultMat.matrix})
         }
     }
 
 
+})
+
+app.post('/det', (req, res) => {
+
+    const exp = req.body.expr1
+    const exp2 = req.body.expr2
+
+
+    let cleanExp = exp.replace(/'/g, '"');
+    let stringExp = JSON.stringify(cleanExp)
+    const cleanExp2 = exp2.replace(/'/g, '"');
+    let lalgExp = JSON.parse(stringExp);
+    let lalgExp2 = JSON.parse(cleanExp2);
+
+    if (Array.isArray(lalgExp2[0])) {
+        let mat = new Mat.Matrix(lalgExp2)
+        if (lalgExp === 'det') {
+            let result = mat.determinant()
+            res.json({expr: result})
+        }
+    }
 })
 
 
