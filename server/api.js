@@ -105,72 +105,20 @@ app.post('/mul', (req, res) => {
 
 app.post('/power', (req, res) => {
 
-    const exp = req.body.expr1
-    const exp2 = req.body.expr2
     const exp3 = req.body.expr3
-
-
-    let cleanExp = exp.replace(/'/g, '"');
-    let stringExp = JSON.stringify(cleanExp)
-    const cleanExp2 = exp2.replace(/'/g, '"');
     const cleanExp3 = exp3.replace(/'/g, '"');
-    let lalgExp = JSON.parse(stringExp);
-    let lalgExp2 = JSON.parse(cleanExp2);
     let lalgExp3 = JSON.parse(cleanExp3)
 
-    if (Number.isInteger(lalgExp2[0])) {
-        let vec = new Vec.Vector(lalgExp2)
-        if (lalgExp === 'power') {
-            let resultVec = vec.power(lalgExp3)
-            res.json(resultVec.vector)
-        }
-    }
-    else {
-        let mat = new Mat.Matrix(lalgExp2)
-        if (lalgExp === 'power') {
-            let resultMat = mat.power(lalgExp3)
-            res.json(resultMat.matrix)
-        }
-    }
+    let [mat, lalgExp, lalgExp2] = hop.makeMatrix(req)
+    hop.computeAlgExp(res, mat.power(), lalgExp2, lalgExp, 'power')
 
 
 })
 
-app.post('/exp', (req, res) => {
-
-    const exp = req.body.expr1
-    const exp2 = req.body.expr2
-
-
-    let cleanExp = exp.replace(/'/g, '"');
-    let stringExp = JSON.stringify(cleanExp)
-    const cleanExp2 = exp2.replace(/'/g, '"');
-    let lalgExp = JSON.parse(stringExp);
-    let lalgExp2 = JSON.parse(cleanExp2);
-
-    if (Number.isInteger(lalgExp2[0])) {
-        let vec = new Vec.Vector(lalgExp2)
-        if (lalgExp === 'exponentiation') {
-            let resultVec = vec.exp()
-            res.json(resultVec.vector)
-        }
-    }
-    else {
-        let mat = new Mat.Matrix(lalgExp2)
-        if (lalgExp === 'exponentiation') {
-            let resultMat = mat.exp()
-            res.json(resultMat.matrix)
-        }
-    }
-
-
-})
-
-app.post('/logm', (req, res) => {
+app.post('/expm', (req, res) => {
 
     let [mat, lalgExp, lalgExp2] = hop.makeMatrix(req)
-    hop.computeAlgExp(res, mat.log(), lalgExp2, lalgExp, 'log')
-
+    hop.computeAlgExp(res, mat.exp(), lalgExp2, lalgExp, 'exponentation')
 
 })
 
