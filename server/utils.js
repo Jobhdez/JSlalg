@@ -10,7 +10,7 @@ function computeAlgExp(res, method, lalgExp2, lalgExp, exp1) {
     }
 }
 
-function makeMatrix(req, res) {
+function makeAlgObj(req, method) {
     const exp = req.body.expr1
     const exp2 = req.body.expr2
 
@@ -20,10 +20,16 @@ function makeMatrix(req, res) {
     let lalgExp = JSON.parse(stringExp);
     let lalgExp2 = JSON.parse(cleanExp2);
 
-    let mat = new Mat.Matrix(lalgExp2)
+    if (method instanceof Mat.Matrix) {
+	method.matrix = lalgExp2
 
-    return [mat, lalgExp, lalgExp2]
+	return [method, lalgExp, lalgExp2]
+    }
+    else {
+	method.vector = lalgExp2
+	return [method, lalgExp, lalgExp2]
+    }
 }
 
 
-module.exports = {computeAlgExp, makeMatrix}
+module.exports = {computeAlgExp, makeAlgObj}
