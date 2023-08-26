@@ -110,7 +110,7 @@ app.post('/power', (req, res) => {
     let lalgExp3 = JSON.parse(cleanExp3)
 
     let [mat, lalgExp, lalgExp2] = hop.makeMatrix(req)
-    hop.computeAlgExp(res, mat.power(), lalgExp2, lalgExp, 'power')
+    hop.computeAlgExp(res, mat.power(lalgExp3), lalgExp2, lalgExp, 'power')
 
 
 })
