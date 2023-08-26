@@ -166,32 +166,10 @@ app.post('/exp', (req, res) => {
 
 })
 
-app.post('/log', (req, res) => {
+app.post('/logm', (req, res) => {
 
-    const exp = req.body.expr1
-    const exp2 = req.body.expr2
-
-
-    let cleanExp = exp.replace(/'/g, '"');
-    let stringExp = JSON.stringify(cleanExp)
-    const cleanExp2 = exp2.replace(/'/g, '"');
-    let lalgExp = JSON.parse(stringExp);
-    let lalgExp2 = JSON.parse(cleanExp2);
-
-    if (Number.isInteger(lalgExp2[0])) {
-        let vec = new Vec.Vector(lalgExp2)
-        if (lalgExp === 'log') {
-            let resultVec = vec.log()
-            res.json(resultVec.vector)
-        }
-    }
-    else {
-        let mat = new Mat.Matrix(lalgExp2)
-        if (lalgExp === 'log') {
-            let resultMat = mat.log()
-            res.json({expr: resultMat.matrix})
-        }
-    }
+    let [mat, lalgExp, lalgExp2] = hop.makeMatrix(req)
+    hop.computeAlgExp(res, mat.log(), lalgExp2, lalgExp, 'log')
 
 
 })
