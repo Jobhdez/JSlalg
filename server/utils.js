@@ -1,6 +1,6 @@
 let Mat = require('../src/matrix.js')
 
-function computeAlgExp(res, method, lalgExp2, lalgExp, exp1) {
+function computeAlgExp(res, method, lalgExp, exp1) {
     /*
     higher order function that computes a given linear algebra expression based on the method.
     Example:
