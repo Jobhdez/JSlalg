@@ -109,7 +109,7 @@ app.post('/powerm', (req, res) => {
     const cleanExp3 = exp3.replace(/'/g, '"');
     let lalgExp3 = JSON.parse(cleanExp3)
 
-    let [mat, lalgExp, lalgExp2] = hop.makeMatrix(req)
+    let [mat, lalgExp, lalgExp2] = hop.makeAlgObj(req, new Mat.Matrix())
     hop.computeAlgExp(res, mat.power(lalgExp3), lalgExp2, lalgExp, 'power')
 
 
@@ -117,25 +117,26 @@ app.post('/powerm', (req, res) => {
 
 app.post('/logm', (req, res) => {
 
-    let [mat, lalgExp, lalgExp2] = hop.makeMatrix(req)
+    let [mat, lalgExp, lalgExp2] = hop.makeAlgObj(req, new Mat.Matrix())
     hop.computeAlgExp(res, mat.log(), lalgExp2, lalgExp, 'log')
+})
 
 app.post('/expm', (req, res) => {
 
-    let [mat, lalgExp, lalgExp2] = hop.makeMatrix(req)
+    let [mat, lalgExp, lalgExp2] = hop.makeMatrix(req, new Mat.Matrix())
     hop.computeAlgExp(res, mat.exp(), lalgExp2, lalgExp, 'exponentation')
 
 })
 
 app.post('/det', (req, res) => {
 
-    let [mat, lalgExp, lalgExp2] = hop.makeMatrix(req)
+    let [mat, lalgExp, lalgExp2] = hop.makeAlgObj(req, new Mat.Matrix())
     hop.computeAlgExp(res, mat.determinant(), lalgExp2, lalgExp, 'det')
 })
 
 app.post('/transpose', (req, res) => {
 
-    let [mat, lalgExp, lalgExp2] = hop.makeMatrix(req)
+    let [mat, lalgExp, lalgExp2] = hop.makeAlgObj(req, new Mat.Matrix())
     hop.computeAlgExp(res, mat.transpose(), lalgExp2, lalgExp, 'transpose')
 })
 
