@@ -1,6 +1,14 @@
 let Mat = require('../src/matrix.js')
 
 function computeAlgExp(res, method, lalgExp2, lalgExp, exp1) {
+    /*
+    higher order function that computes a given linear algebra expression based on the method.
+    Example:
+      @param method: Mat.Matrix([[3,4,5],[5,6,7],[6,7,8]].transpose()
+      @returns: json response consisting of the transpse of the above matrix.
+
+      Note: it can also consume a Vec.Vector() object/method.
+    */
     if (lalgExp === exp1) {
 	let result = method
 	res.json({expr: result})
