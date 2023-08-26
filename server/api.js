@@ -115,6 +115,11 @@ app.post('/powerm', (req, res) => {
 
 })
 
+app.post('/logm', (req, res) => {
+
+    let [mat, lalgExp, lalgExp2] = hop.makeMatrix(req)
+    hop.computeAlgExp(res, mat.log(), lalgExp2, lalgExp, 'log')
+
 app.post('/expm', (req, res) => {
 
     let [mat, lalgExp, lalgExp2] = hop.makeMatrix(req)
