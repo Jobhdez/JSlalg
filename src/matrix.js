@@ -183,6 +183,12 @@ function getFirsts(matrix, index) {
 }
 
 function removeColumn(matrix, column) {
+    /*
+    Example:
+    > removeColumn([[4,5,6],[6,7,8]], 0)
+    [[5,6],[7,8]]
+    
+    */
     let ma2 = matrix.filter((_, i) => i != 0);
 
     return ma2.map((i) => i.filter((_, j) => j != column));
