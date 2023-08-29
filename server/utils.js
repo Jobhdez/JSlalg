@@ -7,7 +7,7 @@ function computeAlgExp(res, method, lalgExp, exp1) {
       Assumes a Vector or Matrix method
     Example:
       @param method: Mat.Matrix([[3,4,5],[5,6,7],[6,7,8]].transpose()
-      @returns: json response consisting of the transpse of the above matrix.
+      @returns: json response consisting of the transpose of the above matrix.
 
       Note: it can also consume a Vec.Vector() object/method.
     */
