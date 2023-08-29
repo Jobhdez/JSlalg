@@ -79,7 +79,7 @@ class Compute {
 	this.lalgObj = lalgObj
 	this.lalgObj2 = lalgObj2
 	this.exp = exp
-	this.exp2 = exp
+	this.exp2 = exp2
     }
     add() {
 	this.lalgObj = this.exp
@@ -88,7 +88,7 @@ class Compute {
     }
     sub() {
 	this.lalgObj = this.exp
-	this.lalgObj = this.exp2
+	this.lalgObj2 = this.exp2
 	return this.lalgObj.sub(lalgObj2)
     }
 }
