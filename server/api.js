@@ -11,20 +11,20 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.post('/add', (req, res) => {
     const [e1, e2] = hop.makeArithObj(req)
     if (Number.isInteger(e1[0])){
-	computeExp(e1, e2, new Vec.Vector(), new Vec.Vector(), '+')
+	hop.computeExp(e1, e2, new Vec.Vector(), new Vec.Vector(), '+')
     }
     else {
-	computeExp(e1, e2, new Mat.Matrix(), new Mat.Matrix(), '+')
+	hop.computeExp(e1, e2, new Mat.Matrix(), new Mat.Matrix(), '+')
     }
 })
 
 app.post('/sub', (req, res) => {
     const [e1, e2] = hop.makeArithObj(req)
     if (Number.isInteger(e1[0])){
-	computeExp(e1, e2, new Vec.Vector(), new Vec.Vector(), '-')
+	hop.computeExp(e1, e2, new Vec.Vector(), new Vec.Vector(), '-')
     }
     else {
-	computeExp(e1, e2, new Mat.Matrix(), new Mat.Matrix(), '-')
+	hop.computeExp(e1, e2, new Mat.Matrix(), new Mat.Matrix(), '-')
     }
 })
 
