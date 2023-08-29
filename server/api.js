@@ -9,50 +9,22 @@ app.use(express.json())
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.post('/add', (req, res) => {
-    const exp = req.body.expr1
-    const exp2 = req.body.expr2
-
-
-    const cleanExp = exp.replace(/'/g, '"');
-    const cleanExp2 = exp2.replace(/'/g, '"');
-    let lalgExp = JSON.parse(cleanExp);
-    let lalgExp2 = JSON.parse(cleanExp2);
-
-    if (Number.isInteger(lalgExp[0])) {
-        let vec1 =  new Vec.Vector(lalgExp)
-        let vec2 = new Vec.Vector(lalgExp2)
-        let resultVec = vec1.add(vec2)
-        res.json({expr: resultVec.vector})
-    } else {
-        let matrix = new Mat.Matrix(lalgExp)
-        let matrix2 = new Mat.Matrix(lalgExp2)
-        let resultMatrix = matrix.add(matrix2)
-
-        res.json({expr: resultMatrix.matrix})
+    const [e1, e2] = hop.makeArithObj(req)
+    if (Number.isInteger(e1[0])){
+	computeExp(e1, e2, new Vec.Vector(), new Vec.Vector(), '+')
+    }
+    else {
+	computeExp(e1, e2, new Mat.Matrix(), new Mat.Matrix(), '+')
     }
 })
 
 app.post('/sub', (req, res) => {
-    const exp = req.body.expr1
-    const exp2 = req.body.expr2
-
-
-    const cleanExp = exp.replace(/'/g, '"');
-    const cleanExp2 = exp2.replace(/'/g, '"');
-    let lalgExp = JSON.parse(cleanExp);
-    let lalgExp2 = JSON.parse(cleanExp2);
-
-    if (Number.isInteger(lalgExp[0])) {
-        let vec1 =  new Vec.Vector(lalgExp)
-        let vec2 = new Vec.Vector(lalgExp2)
-        let resultVec= vec1.sub(vec2)
-        res.json({expr: resultVec.vector})
-    } else {
-        let matrix = new Mat.Matrix(lalgExp)
-        let matrix2 = new Mat.Matrix(lalgExp2)
-        let resultMatrix = matrix.sub(matrix2)
-
-        res.json({expr: resultMatrix.matrix})
+    const [e1, e2] = hop.makeArithObj(req)
+    if (Number.isInteger(e1[0])){
+	computeExp(e1, e2, new Vec.Vector(), new Vec.Vector(), '-')
+    }
+    else {
+	computeExp(e1, e2, new Mat.Matrix(), new Mat.Matrix(), '-')
     }
 })
 
