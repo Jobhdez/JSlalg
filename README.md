@@ -7,8 +7,7 @@ I also built a little API in express.
 ## Dependencies
 1. Clone this repo:
 ```
-* git clone
-git@github.com:Jobhdez/classesJS.git`
+* git clone git@github.com:Jobhdez/classesJS.git`
 ```
 2. Install Node:
 - MacOS:
