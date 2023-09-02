@@ -5,17 +5,24 @@ I wrote some basic vector and matrix and polynomial classes so I can learn to wr
 
 I also built a little API in express.
 ## Dependencies
-1. Clone this repo: `git clone git@github.com:Jobhdez/classesJS.git`
-
+1. Clone this repo:
+```
+* git clone
+git@github.com:Jobhdez/classesJS.git`
+```
 2. Install Node:
-
-
-- MacOS: `brew install node`
-[Homebrew](https://brew.sh)
-
-- Ubuntu: `sudo apt install nodejs`
-
-- Arch Linux: `pacman -S nodejs`
+- MacOS:
+```
+* brew install node
+```
+- Ubuntu:
+```
+* sudo apt install nodejs
+```
+- Arch Linux:
+```
+* pacman -S nodejs
+```
 
 ## Usage
 1. Navigate to the src code directory:
