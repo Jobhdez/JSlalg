@@ -166,6 +166,14 @@ class Matrix {
 
 	return e1 - e2 + e3
     }
+
+    trace() {
+	let sumOfDiagonals = 0;
+	for (let i in this.matrix) {
+	    sumOfDiagonals += this.matrix[i][i]
+	}
+	return sumOfDiagonals
+    }
 			  
 	    
 }
