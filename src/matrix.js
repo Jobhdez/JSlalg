@@ -174,6 +174,10 @@ class Matrix {
 	}
 	return sumOfDiagonals
     }
+
+    upperTriangular() {
+	return new Matrix(this.matrix.map((row, i) => { return insertZeros(i, row)}))
+    }
 			  
 	    
 }
@@ -201,4 +205,18 @@ function removeColumn(matrix, column) {
 
     return ma2.map((i) => i.filter((_, j) => j != column));
 }
+
+function insertZeros(numberOfZeros, row) {
+    if (numberOfZeros === 0) {
+	return row;
+    }
+    else {
+	for (let i = 0; i < numberOfZeros; i++) {
+	    row[i] = 0;
+	    
+	}
+	return row;
+    }
+}
 module.exports = {Matrix}
+
