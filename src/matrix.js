@@ -178,7 +178,17 @@ class Matrix {
     upperTriangular() {
 	return new Matrix(this.matrix.map((row, i) => { return insertZeros(i, row)}))
     }
-			  
+
+    lowerTriangular() {
+	let zeros = this.matrix.length - 1
+	let lowerMatrix = []
+	for (let i in this.matrix) {
+	    let row = lowerInsertZeros(zeros, this.matrix[i])
+	    lowerMatrix[i] = row
+	    zeros -= 1
+	}
+	return new Matrix(lowerMatrix)
+    }
 	    
 }
 
@@ -218,5 +228,20 @@ function insertZeros(numberOfZeros, row) {
 	return row;
     }
 }
-module.exports = {Matrix}
+
+function lowerInsertZeros(numberOfZeros, row) {
+    if (numberOfZeros === 0) {
+	return row;
+    }
+    else {
+	let j = row.length - numberOfZeros
+	for (let i = j; i < row.length; i++) {
+	    row[i] = 0;
+	}
+	return row;
+    }
+}
+	
+	    
+module.exports = {Matrix, lowerInsertZeros}
 
