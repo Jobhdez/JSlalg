@@ -126,6 +126,11 @@ describe('matrix tests', function () {
 	let m10 = new lMat.Matrix([[2,1,5],[2,3,4],[0,1,0]])
 	expect(m10.trace()).to.eql(5)
     })
+
+    it('test upper triangular of a square matrix', () => {
+	let ma11 = new lMat.Matrix([[1,2,3,4],[5,6,7,8], [9,10,11,12],[13,14,15,16]])
+	expect(ma11.upperTriangular()).to.eql(new lMat.Matrix([ [ 1, 2, 3, 4 ], [ 0, 6, 7, 8 ], [ 0, 0, 11, 12 ], [ 0, 0, 0, 16 ] ]))
+    })
 })
 
 describe('Matrix-Vec tests', function () {
