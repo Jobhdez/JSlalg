@@ -131,6 +131,12 @@ describe('matrix tests', function () {
 	let ma11 = new lMat.Matrix([[1,2,3,4],[5,6,7,8], [9,10,11,12],[13,14,15,16]])
 	expect(ma11.upperTriangular()).to.eql(new lMat.Matrix([ [ 1, 2, 3, 4 ], [ 0, 6, 7, 8 ], [ 0, 0, 11, 12 ], [ 0, 0, 0, 16 ] ]))
     })
+
+    it('test lower triangular of a square matrix', () => {
+	let m12 = new lMat.Matrix([[1,2,3,4],[5,6,7,8],[9,10,11,12], [13,14,15,16]])
+	expect(m12.lowerTriangular()).to.eql(new lMat.Matrix( [[ 1, 0, 0, 0 ],[ 5, 6, 0, 0 ], [ 9, 10, 11, 0 ],[ 13, 14, 15, 16]]))
+    })
+	
 })
 
 describe('Matrix-Vec tests', function () {
