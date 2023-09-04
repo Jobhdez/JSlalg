@@ -121,6 +121,11 @@ describe('matrix tests', function () {
 	let m9 =  new lMat.Matrix([[6,1,1], [4,-2, 5], [2,8,7]])
 	expect(m9.determinant()).to.eql(-306)
     })
+
+    it('test trace of a square matrix', () => {
+	let m10 = new lMat.Matrix([[2,1,5],[2,3,4],[0,1,0]])
+	expect(m10.trace()).to.eql(5)
+    })
 })
 
 describe('Matrix-Vec tests', function () {
