@@ -118,6 +118,11 @@ app.post('/transpose', (req, res) => {
     hop.computeAlgExp(res, mat.transpose(), lalgExp, 'transpose')
 })
 
+app.post('/upperTriangular', (req, res) => {
+    let [mat, lalgExp, lalgExp2] = hop.makeAlgObj(req, new Mat.Matrix())
+    hop.computeAlgExp(res, mat.upperTriangular(), lalgExp, lalgExp2)
+})
+
 /*
 
   Basic linear algebra on vectors
