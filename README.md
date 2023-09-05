@@ -112,6 +112,9 @@ Matrix endpoints:
 - logm/
 - determinant/
 - transpose/
+- upperTriangular/
+- lowerTriangular/
+- trace/
 ```
 Vector endpoints:
 
@@ -160,6 +163,12 @@ Vector endpoints:
 - transpose
 
 - matrix * scalar
+
+- trace
+
+- upperTriangular
+
+- lowerTriangular
 
 - Square matrix * Square matrix
 
