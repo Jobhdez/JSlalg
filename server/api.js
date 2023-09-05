@@ -123,6 +123,11 @@ app.post('/upperTriangular', (req, res) => {
     hop.computeAlgExp(res, mat.upperTriangular(), lalgExp, lalgExp2)
 })
 
+app.post('/lowerTriangular', (req, res) => {
+    let [mat, lalgExp, lalgExp2] = hop.makeAlgObj(req, new Mat.Matrix())
+    hop.computeAlgExp(res, mat.lowerTriangular(), lalgExp, lalgExp2)
+})
+
 /*
 
   Basic linear algebra on vectors
