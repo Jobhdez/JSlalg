@@ -38,6 +38,14 @@ class MatrixVector {
 
 	return resultVector;
     }
+
+    addVectorMat() {
+	return this.matrix.map((i) => { return vectorAddition(i, this.vector) })
+    }
+}
+
+function vectorAddition(v1, v2) {
+    return v1.map((n, i) => { return n + v2[i]})
 }
 
 module.exports = { MatrixVector }
