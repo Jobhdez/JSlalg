@@ -16,19 +16,20 @@
 
 
 class Matrix {
-	/* Matrix class consisting of basic matrix operations such as:
-	        -- matrix + matrix
-			-- matrix - matrix
-			-- matrix * scalar
-			-- matrix * matrix
-			-- tranpose
-			-- log
-			-- exp
-			-- pow
-
-	  and linear algebra such as:
-	        -- determinant of 3x3 matrices
-	*/
+/* Matrix class consisting of basic matrix operations such as:
+    - matrix + matrix
+    - matrix - matrix
+    - matrix * scalar
+    - matrix * matrix
+    - tranpose
+    - log
+    - exp
+    - pow
+    - determinant of 3x3 matrices
+    - upper triangular
+    - lower triangular
+    - trace
+    */
     constructor(matrix) {
 	this.matrix = matrix;
     }
