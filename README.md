@@ -146,9 +146,7 @@ Vector endpoints:
 
 - Element-wise natural logarithm
 
-### Linear algebra
-
-#### vectors
+### vectors
 
 - vector * scalar
 
@@ -158,7 +156,7 @@ Vector endpoints:
 
 - isUnitVector
 
-#### Matrices
+### Matrices
 
 - transpose
 
@@ -173,4 +171,9 @@ Vector endpoints:
 - Square matrix * Square matrix
 
 - determinant of 3x3 (square) matrices
+
+  ### Matrix-Vector
+
+  - Matrix-Vecttor multiplication
+  - Matrix-Vector addition and subtraction
 
