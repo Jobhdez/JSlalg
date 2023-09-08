@@ -26,7 +26,7 @@ I also built a little API in express.
 ## Usage
 1. Navigate to the src code directory:
 ```
-* cd ~/classesJS/src
+* cd ~/JSlalg/src
 ```
 
 2. Start Node by typing `node` in your terminal.
