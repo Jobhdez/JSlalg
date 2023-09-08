@@ -181,7 +181,7 @@ describe('Polynomial tests', function () {
 
     })
 
-    it('test polynomial derive', () => {
+    it('test polynomial diff', () => {
         let poly6 = new p.Polynomial([2,3,5,1])
         expect(poly6.diff()).to.eql(new p.Polynomial([6, 6, 5]))
     })
