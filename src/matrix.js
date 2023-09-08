@@ -244,5 +244,5 @@ function lowerInsertZeros(numberOfZeros, row) {
 }
 	
 	    
-module.exports = {Matrix, lowerInsertZeros}
+module.exports = {Matrix}
 
