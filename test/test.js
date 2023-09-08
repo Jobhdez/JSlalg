@@ -147,6 +147,11 @@ describe('Matrix-Vec tests', function () {
 	expect(mv.matrixVecMul()).to.eql([18,45])
     })
 
+    it("test matrix-vec addition", () => {
+	let mv2 = new matrixVec.MatrixVector([[4,5,6,7],[7,8,9,8]], [1,2,3,5])
+	expect(mv2.addVectorMat()).to.eql([[5,7,9,12], [8,10,12,13]])
+    })
+
 })
 
 describe('Polynomial tests', function () {
