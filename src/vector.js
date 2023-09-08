@@ -15,7 +15,7 @@ class Vector {
 
         @param other: vector
         @param this.vector: vector
-        @returns: vector
+        @returns: vectorx
         */
 	if (other instanceof Vector) {
 	    let v = [];
