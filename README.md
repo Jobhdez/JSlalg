@@ -172,8 +172,7 @@ Vector endpoints:
 
 - determinant of 3x3 (square) matrices
 
-  ### Matrix-Vector
-
-  - Matrix-Vecttor multiplication
-  - Matrix-Vector addition and subtraction
+### Matrix-Vector
+- Matrix-Vecttor multiplication
+- Matrix-Vector addition and subtraction
 
