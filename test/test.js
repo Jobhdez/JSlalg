@@ -69,6 +69,19 @@ describe('vector tests', function () {
 	let v8 = new lVec.Vector([3, 4, 6]);
 	 expect(v8.log()).to.eql(new lVec.Vector([1.0986122886681096, 1.3862943611198906, 1.791759469228055]))
      })
+
+    it('test element wise vector maximum', () => {
+	let v = new lVec.Vector([3,2,1])
+	let v2 = new lVec.Vector([4,1,3])
+	expect(v.maximum(v2)).to.eql(new lVec.Vector([4,2,3]))
+    })
+
+    it('test element wise vector minimum', () => {
+	let v = new lVec.Vector([3,2,1])
+	let v2 = new lVec.Vector([4,1,3])
+	expect(v.minimum(v2)).to.eql(new lVec.Vector([3,1,1]))
+    })
+	       
 })
 
 describe('matrix tests', function () {
