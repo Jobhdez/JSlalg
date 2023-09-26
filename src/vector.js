@@ -156,6 +156,19 @@ class Vector {
 	    }
 	}
     }
+
+     minimum(other) {
+	let minVector = []
+
+	for (let i in this.vector) {
+	    if (this.vector[i] > other.vector[i]) {
+		minVector[i] = other.vector[i]
+	    }
+	    else {
+		minVector[i] = this.vector[i]
+	    }
+	}
+    }
 		    
 }
 
