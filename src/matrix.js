@@ -209,7 +209,7 @@ class Matrix {
 	return new Matrix(maxMatrix)
     }
 
-    minumum(other) {
+    minimum(other) {
 	let minMatrix = []
 	for (let i in this.matrix) {
 	    minMatrix[i] = []
