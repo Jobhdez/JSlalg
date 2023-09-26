@@ -149,7 +149,19 @@ describe('matrix tests', function () {
 	let m12 = new lMat.Matrix([[1,2,3,4],[5,6,7,8],[9,10,11,12], [13,14,15,16]])
 	expect(m12.lowerTriangular()).to.eql(new lMat.Matrix( [[ 1, 0, 0, 0 ],[ 5, 6, 0, 0 ], [ 9, 10, 11, 0 ],[ 13, 14, 15, 16]]))
     })
-	
+    
+    it('test element wise matrix maximum', () => {
+	let m = new lMat.Matrix([[3,2,2,3],[4,3,4,5]])
+	let m2 = new lMat.Matrix([[2,3,3,2],[3,2,5,3]])
+	expect(m.maximum(m2)).to.eql(new lMat.Matrix([[3,3,3,3],[4,3,5,5]]))
+    })
+
+    it('test element wise matrix minmum', () => {
+	let m = new lMat.Matrix([[3,2,2,3],[4,3,4,5]])
+	let m2 = new lMat.Matrix([[2,3,3,2],[3,2,5,3]])
+	expect(m.minimum(m2)).to.eql(new lMat.Matrix([[2,2,2,2],[3,2,4,3]]))
+    })
+    
 })
 
 describe('Matrix-Vec tests', function () {
