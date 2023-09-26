@@ -143,6 +143,19 @@ class Vector {
 	    return Math.log(n)
 	}))
     }
+
+    maximum(other) {
+	let maxVector = []
+
+	for (let i in this.vector) {
+	    if (this.vector[i] < other.vector[i]) {
+		maxVector[i] = other.vector[i]
+	    }
+	    else {
+		maxVector[i] = this.vector[i]
+	    }
+	}
+    }
 		    
 }
 
