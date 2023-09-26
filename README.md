@@ -146,6 +146,10 @@ Vector endpoints:
 
 - Element-wise natural logarithm
 
+- Element wise maximum
+
+- Elemenet wise minumum
+
 ### vectors
 
 - vector * scalar
