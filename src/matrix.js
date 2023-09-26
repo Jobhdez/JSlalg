@@ -210,21 +210,21 @@ class Matrix {
     }
 
     minumum(other) {
-	let maxMatrix = []
+	let minMatrix = []
 	for (let i in this.matrix) {
-	    maxMatrix[i] = []
+	    minMatrix[i] = []
 	}
 	for (let i in this.matrix) {
 	    for (let j in this.matrix[i]) {
 		if (this.matrix[i][j] > other.matrix[i][j]) {
-		    maxMatrix[i][j] = other.matrix[i][j]
+		    minMatrix[i][j] = other.matrix[i][j]
 		}
 		else {
-		    maxMatrix[i][j] =  this.matrix[i][j]
+		    minMatrix[i][j] =  this.matrix[i][j]
 		}
 	    }
 	}
-	return new Matrix(maxMatrix)
+	return new Matrix(minMatrix)
     }
 }
 
