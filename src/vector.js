@@ -155,6 +155,7 @@ class Vector {
 		maxVector[i] = this.vector[i]
 	    }
 	}
+	return new Vector(maxVector)
     }
 
      minimum(other) {
@@ -168,6 +169,7 @@ class Vector {
 		minVector[i] = this.vector[i]
 	    }
 	}
+	 return new Vector(minVector)
     }
 		    
 }
