@@ -223,4 +223,9 @@ describe('Neural Networks operator tests', function () {
         let nw = new nn.NeuralNet1D([-1,0,3,5])
         expect(nw.softmax()).to.eql(new lVec.Vector([0.002165696460061088, 0.005886973333342136, 0.11824302025266466, 0.8737043099539322]))
     })
+
+    it('test log softmax', () => {
+        let nw = new nn.NeuralNet1D([0.3452, -0.0267, 0.4066])
+        expect(nw.logSoftmax()).to.eql(new lVec.Vector([-1.0125994457742364, -1.3844994457742366, -0.9511994457742364]))
+    })
 })
