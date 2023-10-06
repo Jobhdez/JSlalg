@@ -4,7 +4,7 @@ const chai = require('chai');
 const lVec = require('../src/vector');
 const lMat = require('../src/matrix');
 const matrixVec = require('../src/matrixVector');
-
+const nn = require('../src/nn')
 const p = require('../src/poly');
 
 const expect = chai.expect;
@@ -214,5 +214,13 @@ describe('Polynomial tests', function () {
     it('test polynomial evaluation', () => {
         let poly7 = new p.Polynomial([2,3,5,1])
         expect(poly7.evalPoly(2)).to.eql(39)
+    })
+})
+
+describe('Neural Networks operator tests', function () {
+	
+    it('test softmax', () => {
+        let nw = new nn.NeuralNet1D([-1,0,3,5])
+        expect(nw.softmax()).to.eql(new lVec.Vector([0.002165696460061088, 0.005886973333342136, 0.11824302025266466, 0.8737043099539322]))
     })
 })
