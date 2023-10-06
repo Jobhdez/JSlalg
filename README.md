@@ -180,3 +180,6 @@ Vector endpoints:
 - Matrix-Vecttor multiplication
 - Matrix-Vector addition and subtraction
 
+### Neural Network operators
+- 1D softmax
+- 1D logSoftmax 
