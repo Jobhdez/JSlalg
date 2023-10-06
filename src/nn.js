@@ -16,6 +16,11 @@ class NeuralNet1D {
 	let sVec = expV.map((element) => { return element / sumExps})
 
 	return new V.Vector(sVec)
-    }}	
+    }
+    logSoftmax() {
+	let softVec = this.softmax(this.vec)
+
+	return new V.Vector(softVec.vector.map((element) => { return Math.log(element) }))
+    }}
 
 module.exports = {NeuralNet1D}
