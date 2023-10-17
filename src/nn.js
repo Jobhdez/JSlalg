@@ -38,6 +38,10 @@ class NeuralNet{
 	    let lsmax = new NeuralNet(v).logSoftmax()
 	    return lsmax.vector}))
     }
+
+    relu() {
+	return new V.Vector(this.vec.map((v) => { return Math.max(0, v) }))
+    }
 }
 
 module.exports = {NeuralNet}
