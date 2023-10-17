@@ -1,6 +1,7 @@
 const V = require('./vector')
+const M = require('./matrix.js')
 
-class NeuralNet1D {
+class NeuralNet{
     constructor(vec) {
 	this.vec = vec
     }
@@ -17,10 +18,19 @@ class NeuralNet1D {
 
 	return new V.Vector(sVec)
     }
+
+    softmax2d() {
+	return new M.Matrix(this.vec.map((v) => {
+	    let smax = new NeuralNet(v).softmax()
+	    return smax.vector
+	}))
+    }
+			
+	    
     logSoftmax() {
 	let softVec = this.softmax(this.vec)
 
 	return new V.Vector(softVec.vector.map((element) => { return Math.log(element) }))
     }}
 
-module.exports = {NeuralNet1D}
+module.exports = {NeuralNet}
