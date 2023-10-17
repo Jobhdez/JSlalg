@@ -239,6 +239,11 @@ describe('Neural Networks operator tests', function () {
     it('test 2d log softmax', () => {
 	let nw = new nn.NeuralNet([[0.3452, -0.0267, 0.4066],[0.3452, -0.0267, 0.4066]])
         expect(nw.logSoftmax2d()).to.eql(new lMat.Matrix([[-1.0125994457742364, -1.3844994457742366, -0.9511994457742364],[-1.0125994457742364, -1.3844994457742366, -0.9511994457742364]]))
-    })
 	
+    })
+
+    it('test relu', () => {
+	let net = new nn.NeuralNet([-3, 4, 6, -3])
+	expect(net.relu()).to.eql(new lVec.Vector([0,4,6,0]))
+    })
 })
