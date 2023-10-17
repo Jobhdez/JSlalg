@@ -31,6 +31,13 @@ class NeuralNet{
 	let softVec = this.softmax(this.vec)
 
 	return new V.Vector(softVec.vector.map((element) => { return Math.log(element) }))
-    }}
+    }
+
+    logSoftmax2d() {
+	return new M.Matrix(this.vec.map((v) => {
+	    let lsmax = new NeuralNet(v).logSoftmax()
+	    return lsmax.vector}))
+    }
+}
 
 module.exports = {NeuralNet}
