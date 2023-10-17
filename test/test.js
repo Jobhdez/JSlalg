@@ -246,4 +246,9 @@ describe('Neural Networks operator tests', function () {
 	let net = new nn.NeuralNet([-3, 4, 6, -3])
 	expect(net.relu()).to.eql(new lVec.Vector([0,4,6,0]))
     })
+
+    it('test 2d relu', () => {
+	let net = new nn.NeuralNet([[-3, 4, 6, -3],[-3, 4, 6, -3]])
+	expect(net.relu2d()).to.eql(new lMat.Matrix([[0,4,6,0],[0,4,6,0]]))
+    })
 })
