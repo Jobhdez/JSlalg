@@ -42,6 +42,10 @@ class NeuralNet{
     relu() {
 	return new V.Vector(this.vec.map((v) => { return Math.max(0, v) }))
     }
+
+    relu2d() {
+	return new M.Matrix(this.vec.map((row) => { return row.map((column) => { return Math.max(0, column) })}))
+    }
 }
 
 module.exports = {NeuralNet}
