@@ -251,4 +251,10 @@ describe('Neural Networks operator tests', function () {
 	let net = new nn.NeuralNet([[-3, 4, 6, -3],[-3, 4, 6, -3]])
 	expect(net.relu2d()).to.eql(new lMat.Matrix([[0,4,6,0],[0,4,6,0]]))
     })
+
+    it('test for sidmoid', () => {
+	let net = new nn.NeuralNet([2,3,4])
+	expect(net.sigmoid()).to.eql(new lVec.Vector([ 0.8807970779778823, 0.9525741268224334, 0.9820137900379085 ]
+						    ))
+    })
 })
