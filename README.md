@@ -182,4 +182,12 @@ Vector endpoints:
 
 ### Neural Network operators
 - 1D softmax
+- 2D softmax
 - 1D logSoftmax 
+- 2D logsoftmax
+- 1D relu
+- 2D relu
+- 1D sigmoid
+- 2D sigmoid
+- 1D tanh
+- 2D tanh
