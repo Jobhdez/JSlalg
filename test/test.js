@@ -262,4 +262,9 @@ describe('Neural Networks operator tests', function () {
 	let net = new nn.NeuralNet([[2,3,4], [2,3,4]])
 	expect(net.sigmoid2d()).to.eql(new lMat.Matrix([[ 0.8807970779778823, 0.9525741268224334, 0.9820137900379085 ], [ 0.8807970779778823, 0.9525741268224334, 0.9820137900379085 ]]))
     })
+
+    it('test for tanh', () => {
+	let net = new nn.NeuralNet([2,4,5,6])
+	expect(net.tanh()).to.eql(new lVec.Vector([0.964027580075817, 0.9993292997390669, 0.999909204262595, 0.9999877116507956]))
+    })
 })
