@@ -58,6 +58,10 @@ class NeuralNet{
     tanh() {
 	return new V.Vector(this.vec.map((n) => { return (Math.exp(n) -  Math.exp(- n)) / (Math.exp(n) + Math.exp(- n))}))
     }
+
+    tanh2d() {
+	return new M.Matrix(this.vec.map((row) => { return row.map((n) => {return (Math.exp(n) -  Math.exp(- n)) / (Math.exp(n) + Math.exp(- n))})}))
+    }
 }
 
 module.exports = {NeuralNet}
