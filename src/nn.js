@@ -54,6 +54,10 @@ class NeuralNet{
     sigmoid2d() {
 	return new M.Matrix(this.vec.map((row) => { return row.map((n) => { return 1 / (1 + Math.exp(- n))})}))
     }
+
+    tanh() {
+	return new V.Vector(this.vec.map((n) => { return (Math.exp(n) -  Math.exp(- n)) / (Math.exp(n) + Math.exp(- n))}))
+    }
 }
 
 module.exports = {NeuralNet}
