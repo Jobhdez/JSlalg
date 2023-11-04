@@ -62,6 +62,27 @@ class NeuralNet{
     tanh2d() {
 	return new M.Matrix(this.vec.map((row) => { return row.map((n) => {return (Math.exp(n) -  Math.exp(- n)) / (Math.exp(n) + Math.exp(- n))})}))
     }
+    
+    convolution(other) {
+	let t = (this.vec.length + other.length) - 1
+	var convolutions = []
+	for (let i = 0; i < t; i++) {
+	    convolutions.push(null)
+	}
+	for (let i in convolutions) {
+	    var summation = 0
+	    for (let j in this.vec) {
+		if (i - j >= 0 && i - j < this.vec.length) {
+		    summation += this.vec[j] * other[i-j]
+		}
+	    }
+	    convolutions[i] = summation
+	}
+
+	return new V.Vector(convolutions)
+    }
+		
+	
 }
 
 module.exports = {NeuralNet}
