@@ -5,9 +5,11 @@ I wrote some basic vector and matrix and polynomial classes so I can learn to wr
 
 I also built a little API in express.
 ## Dependencies
-1. Clone this repo:
+1. Clone this repo and `npm install`
 ```
 * git clone git@github.com:Jobhdez/JSlalg.git`
+* cd JSlalg
+* npm install
 ```
 2. Install Node:
 - MacOS:
