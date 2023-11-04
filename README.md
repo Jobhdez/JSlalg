@@ -193,3 +193,4 @@ Vector endpoints:
 - 2D sigmoid
 - 1D tanh
 - 2D tanh
+- convolution
