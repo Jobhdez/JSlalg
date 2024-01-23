@@ -179,7 +179,7 @@ Vector endpoints:
 - determinant of 3x3 (square) matrices
 
 ### Matrix-Vector
-- Matrix-Vecttor multiplication
+- Matrix-Vector multiplication
 - Matrix-Vector addition and subtraction
 
 ### Neural Network operators
