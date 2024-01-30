@@ -1,9 +1,9 @@
 # JSlalg
-This is a small (toy) exercise to learn JS.
 
-I wrote some basic vector and matrix and polynomial classes so I can learn to write comfortably in JavaScript.
+I wrote some basic vector and matrix math.
 
 I also built a little API in express.
+
 ## Dependencies
 1. Clone this repo and `npm install`
 ```
