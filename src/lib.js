@@ -11,9 +11,11 @@ const elementWiseOneParam = (op) => {
 const add = (e, e2) => {
   return e + e2;
 };
+
 const sub = (e, e2) => {
   return e - e2;
 };
+
 const mul = (e, e2) => {
   return e * e2;
 };

@@ -1,5 +1,6 @@
 import { expect } from "chai";
 import {
+  // vectors
   addv,
   subv,
   vecs,
@@ -9,6 +10,7 @@ import {
   expv,
   maxv,
   minv,
+  // matrices
   addm,
   subm,
   mats,
@@ -19,6 +21,7 @@ import {
   maxm,
   minm,
   transpose,
+  // polynomials
   addp,
   subp,
   degree,
