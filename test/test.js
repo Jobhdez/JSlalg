@@ -24,13 +24,6 @@ import {
   degree,
 } from "../src/lib.js";
 
-/*
-const mocha = require("mocha");
-const chai = require("chai");
-
-const lib = require("../src/lib.js");
-*/
-
 describe("vector tests", function () {
   it("test vector sum", () => {
     let v = [3, 4, 5, 6];
