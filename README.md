@@ -1,10 +1,11 @@
-# JSlalg
+# basic vector and matrix algebra
 
 I wrote some basic vector and matrix math.
 
 I also built a little API in express.
 
 ## Dependencies
+
 1. Clone this repo and `npm install`
 ```
 * git clone git@github.com:Jobhdez/JSlalg.git`
@@ -76,3 +77,38 @@ I also built a little API in express.
 - matrix * scalar
 
 - matrix * matrix
+
+## WEB API
+
+### Usage
+
+```
+* node api.js
+```
+
+In a different terminal:
+
+```python
+>>> import requests 
+>>> url = "http://localhost:3000/api/vectors/add"
+>>> data = {'exp': '[1,2,3]', 'exp2': '[1,2,3]'}
+>>> re = requests.post(url, data=data)
+>>> re.json()
+{'expr': [2, 4, 6]}
+>>> data = {'exp': '[1,2,3]', 'exp2': '2'}
+>>> url = "http://localhost:3000/api/vectors/vecs"
+>>> re = requests.post(url, data=data)
+>>> re.json()
+{'expr': [None, None, None]}
+>>> url = "http://localhost:3000/api/vectors/dotp"
+>>> data = {'exp': '[1,2,3]', 'exp2': '[3,1,2]'}
+>>> re = requests.post(url, data=data)
+>>> re.json()
+{'expr': 14}
+>>> url = "http://localhost:3000/api/vectors/log"
+>>> data = {'exp': '[1,2,3]'}
+>>> re = requests.post(url, data=data)
+>>> re.json()
+{'expr': [0, 0.6931471805599453, 1.0986122886681096]}
+>>> 
+```
