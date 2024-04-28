@@ -1,171 +1,120 @@
-const Mat = require('../src/matrix')
-const Vec = require('../src/vector')
-const express = require('express')
-const bodyParser = require('body-parser');
-const hop = require('./utils')
+import {
+  // vectors
+  addv,
+  subv,
+  vecs,
+  dotp,
+  logv,
+  powv,
+  expv,
+  maxv,
+  minv,
+  // matrices
+  addm,
+  subm,
+  mats,
+  matMul,
+  logm,
+  powm,
+  expm,
+  maxm,
+  minm,
+  transpose,
+  // polynomials
+  addp,
+  subp,
+  degree,
+} from "../src/lib.js";
 
-const app = express()
-app.use(express.json())
-app.use(bodyParser.urlencoded({extended: true}));
+import express from "express";
+import bodyParser from "body-parser";
+import { compute, computeOneParam } from "./utils.js";
 
-app.post('/add', (req, res) => {
-    const [e1, e2] = hop.makeArithObj(req)
-    if (Number.isInteger(e1[0])){
-	hop.computeExp(e1, e2, new Vec.Vector(), new Vec.Vector(), '+')
-    }
-    else {
-	hop.computeExp(e1, e2, new Mat.Matrix(), new Mat.Matrix(), '+')
-    }
-})
+const app = express();
+app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
-app.post('/sub', (req, res) => {
-    const [e1, e2] = hop.makeArithObj(req)
-    if (Number.isInteger(e1[0])){
-	hop.computeExp(e1, e2, new Vec.Vector(), new Vec.Vector(), '-')
-    }
-    else {
-	hop.computeExp(e1, e2, new Mat.Matrix(), new Mat.Matrix(), '-')
-    }
-})
+app.post("/api/vectors/add", (req, res) => {
+  let result = compute(addv, req);
 
-app.post('/mul', (req, res) => {
-    const exp = req.body.expr1
-    const exp2 = req.body.expr2
+  res.json({ expr: result });
+});
 
+app.post("/api/vectors/sub", (req, res) => {
+  let result = compute(subv, req);
 
-    const cleanExp = exp.replace(/'/g, '"');
-    const cleanExp2 = exp2.replace(/'/g, '"');
-    let lalgExp = JSON.parse(cleanExp);
-    let lalgExp2 = JSON.parse(cleanExp2);
+  res.json({ expr: result });
+});
 
-    if (Number.isInteger(lalgExp[0]) && !Number.isInteger(lalgExp2)) {
-        let vec1 =  new Vec.Vector(lalgExp)
-        let vec2 = new Vec.Vector(lalgExp2)
-        let resultVec = vec1.dotP(vec2)
-        res.json({expr: resultVec.vector})
+app.post("/api/vectors/dotp", (req, res) => {
+  res.json({ expr: compute(dotp, req) });
+});
 
-    } else if (Number.isInteger(lalgExp[0]) && Number.isInteger(lalgExp2)) {
+app.post("/api/vectors/max", (req, res) => {
+  res.json({ expr: compute(maxv, req) });
+});
 
-        let vec1 = new Vec.Vector(lalgExp)
-        let resultVec = vec1.mulByScalar(lalgExp2)
-        res.json({expr: resultVec.vector})
+app.post("/api/vectors/min", (req, res) => {
+  res.json({ expr: compute(minv, req) });
+});
 
-    } else if (Number.isInteger(lalgExp) && Number.isInteger(lalgExp2[0])) {
-        let vec1 = new Vec.Vector(lalgExp2)
-        let resultVec = vec1.mulByScalar(lalgExp)
-        res.json({expr: resultVec.vector})
+app.post("/api/vectors/vecs", (req, res) => {
+  res.json({ expr: compute(vecs, req) });
+});
 
-    } else if (Array.isArray(lalgExp[0]) && Array.isArray(lalgExp2[0])) {
-        let mat1 = new Mat.Matrix(lalgExp)
-        let mat2 = new Mat.Matrix(lalgExp2)
-        let resultMat = mat1.mulSqMat(mat2)
-        res.json({expr: resultMat.matrix})
+app.post("/api/vectors/log", (req, res) => {
+  res.json({ expr: computeOneParam(logv, req) });
+});
 
-    } else if (Array.isArray(lalgExp[0]) && Number.isInteger(lalgExp2)) {
+app.post("/api/vectors/exp", (req, res) => {
+  res.json({ expr: computeOneParam(expv, req) });
+});
 
-        let mat = new Mat.Matrix(lalgExp);
-        let resultMat = mat.mulByScalar(lalgExp2)
-        res.json({expr: resultMat.matrix})
-        
-    } else {
-        let matrix = new Mat.Matrix(lalgExp2)
-        let resultMatrix = matrix.mulByScalar(lalgExp)
+app.post("/api/vectors/pow", (req, res) => {
+  res.json({ expr: computeOneParam(powv, req) });
+});
 
-        res.json({expr: resultMatrix.matrix})
-    }
-})
+app.post("/api/matrices/add", (req, res) => {
+  let result = compute(addm, req);
 
-/*
+  res.json({ expr: result });
+});
 
-  Basic operations of Matrices
-  ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+app.post("/api/matrices/sub", (req, res) => {
+  let result = compute(subm, req);
 
- */
-app.post('/powerm', (req, res) => {
+  res.json({ expr: result });
+});
 
-    const exp3 = req.body.expr3
-    const cleanExp3 = exp3.replace(/'/g, '"');
-    let lalgExp3 = JSON.parse(cleanExp3)
+app.post("/api/matrices/mul", (req, res) => {
+  res.json({ expr: compute(matMul, req) });
+});
 
-    let [mat, lalgExp, lalgExp2] = hop.makeAlgObj(req, new Mat.Matrix())
-    hop.computeAlgExp(res, mat.power(lalgExp3), lalgExp, 'power')
+app.post("/api/matrices/max", (req, res) => {
+  res.json({ expr: compute(maxv, req) });
+});
 
+app.post("/api/matrices/min", (req, res) => {
+  res.json({ expr: compute(minv, req) });
+});
 
-})
+app.post("/api/matrices/mats", (req, res) => {
+  res.json({ expr: compute(mats, req) });
+});
 
-app.post('/logm', (req, res) => {
+app.post("/api/matrices/log", (req, res) => {
+  res.json({ expr: computeOneParam(logm, req) });
+});
 
-    let [mat, lalgExp, lalgExp2] = hop.makeAlgObj(req, new Mat.Matrix())
-    hop.computeAlgExp(res, mat.log(), lalgExp, 'log')
-})
+app.post("/api/matrices/exp", (req, res) => {
+  res.json({ expr: computeOneParam(expm, req) });
+});
 
-app.post('/expm', (req, res) => {
+app.post("/api/matrices/pow", (req, res) => {
+  res.json({ expr: computeOneParam(powm, req) });
+});
 
-    let [mat, lalgExp, lalgExp2] = hop.makeAlgObj(req, new Mat.Matrix())
-    hop.computeAlgExp(res, mat.exp(), lalgExp, 'exponentation')
-
-})
-
-app.post('/det', (req, res) => {
-
-    let [mat, lalgExp, lalgExp2] = hop.makeAlgObj(req, new Mat.Matrix())
-    hop.computeAlgExp(res, mat.determinant(), lalgExp, 'det')
-})
-
-app.post('/transpose', (req, res) => {
-
-    let [mat, lalgExp, lalgExp2] = hop.makeAlgObj(req, new Mat.Matrix())
-    hop.computeAlgExp(res, mat.transpose(), lalgExp, 'transpose')
-})
-
-app.post('/trace', (req, res) => {
-    let [mat, lalgExp, lalgExp2] = hop.makeAlgObj(req, new Mat.Matrix())
-    hop.computeAlgExp(res, mat.trace(), lalgExp, lalgExp2)
-})
-
-app.post('/upperTriangular', (req, res) => {
-    let [mat, lalgExp, lalgExp2] = hop.makeAlgObj(req, new Mat.Matrix())
-    hop.computeAlgExp(res, mat.upperTriangular(), lalgExp, lalgExp2)
-})
-
-app.post('/lowerTriangular', (req, res) => {
-    let [mat, lalgExp, lalgExp2] = hop.makeAlgObj(req, new Mat.Matrix())
-    hop.computeAlgExp(res, mat.lowerTriangular(), lalgExp, lalgExp2)
-})
-
-/*
-
-  Basic linear algebra on vectors
-  ~~~~~~~~~~~~~~~~~~~~~~~~~
-  */
-
-app.post('/powerv', (req, res) => {
-
-    const exp3 = req.body.expr3
-    const cleanExp3 = exp3.replace(/'/g, '"');
-    let lalgExp3 = JSON.parse(cleanExp3)
-
-    let [vec, lalgExp, lalgExp2] = hop.makeAlgObj(req, new Vec.Vector())
-    hop.computeAlgExp(res, vec.power(lalgExp3), lalgExp, 'power')
-
-
-})
-
-app.post('/logv', (req, res) => {
-
-    let [vec, lalgExp, lalgExp2] = hop.makeAlgObj(req, new Vec.Vector())
-    hop.computeAlgExp(res, vec.log(), lalgExp, 'log')
-})
-
-app.post('/expv', (req, res) => {
-
-    let [vec, lalgExp, lalgExp2] = hop.makeAlgObj(req, new Vec.Vector())
-    hop.computeAlgExp(res, vec.exp(), lalgExp, 'exponentiation')
-
-})
-
-const server = app.listen(3000, () => 
-    console.log(`
+const server = app.listen(3000, () =>
+  console.log(`
     Server ready at: http://localhost:3000`),
-)
-
+);
