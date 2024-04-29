@@ -9,9 +9,7 @@ export function compute(fn, req) {
   const lalgExp = JSON.parse(cleanExp);
   const lalgExp2 = JSON.parse(cleanExp2);
 
-  const result = fn(lalgExp, lalgExp2);
-
-  return result;
+  return fn(lalgExp, lalgExp2);
 }
 
 export function computeOneParam(fn, req) {
