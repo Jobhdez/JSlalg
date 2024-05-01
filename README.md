@@ -36,7 +36,7 @@ I also built a little API in express.
 2. Start Node by typing `node` in your terminal.
 ```
 * node
-> m = require('./lib.js')
+const { addv, addm} = await import("./lib.js")
 ```
 
 ### How to run the tests
