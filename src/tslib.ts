@@ -1,22 +1,16 @@
-type Op = (a: number, b: number) => number;
-type Op2d = (a: number[], b: number[]) => number[];
-type Opv = (a: LalgObj, b: LalgObj) => Vector;
-type Opm = (a: LalgObj, b: LalgObj) => Matrix;
+// simple linear algebra
 
-type Operation = Op | Op2d;
-type OperRet = Opv | Opm;
+function elementWisev(fn: (a: number, b: number) => number) {
+  return (v: number[], v2: number[]) => v.map((x, i) => fn(x, v2[i]));
+}
 
-type Vector = number[];
-type Matrix = number[][];
-type LalgObj = Vector | Matrix;
-
-const elementWise = (op: Operation): OperRet => {
-  return (v: LalgObj, v2: LalgObj): LalgObj => v.map((x, i) => op(x, v2[i]));
-};
+function elementWisem(fn: (a: number[], b: number[]) => number[]) {
+  return (m: number[][], m2: number[][]) => m.map((x, i) => fn(x, m2[i]));
+}
 
 const add = (e: number, e2: number): number => {
   return e + e2;
 };
 
-export const addv = elementWise(add);
-export const addm = elementWise(addv);
+export const addv = elementWisev(add);
+export const addm = elementWisem(addv);
