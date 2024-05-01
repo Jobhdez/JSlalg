@@ -1,5 +1,5 @@
 // simple linear algebra
-
+// this file exists as a future reference for myself :-)
 function elementWisev(fn: (a: number, b: number) => number) {
   return (v: number[], v2: number[]) => v.map((x, i) => fn(x, v2[i]));
 }
