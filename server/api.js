@@ -39,7 +39,7 @@ const app = express();
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const SECRET_KEY = "hello123"
+const SECRET_KEY = "hello123";
 
 const authenticate = expressjwt({ secret: SECRET_KEY, algorithms: ["HS256"] });
 
@@ -52,7 +52,7 @@ app.post("/api/register", (req, res) => {
   }
 
   const hashedPassword = bcrypt.hashSync(password, 8);
-  
+
   const newUser = {
     id: users.length + 1,
     username: username,
